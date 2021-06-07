@@ -18,6 +18,9 @@
                 case 'home': 
                     require_once 'view/home.php';
                     break;
+                case 'administrador': 
+                    require_once 'view/admin/panel.php';
+                    break;
                 case 'docente': 
                     require_once 'view/docente/panel.php';
                     break;

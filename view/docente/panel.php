@@ -15,13 +15,13 @@
                     <i class="fas fa-user fa-9x text-b"></i>
                     <div class="row mt-4">
                         <div class="col-md-12">
-                            <h3>Alumno</h3>
+                            <h3>Docente</h3>
                             <hr>
-                            <p class=""><b>Nombre: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>apellidos: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>Carrera: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>Semestre: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>No. control: </b><?=$_SESSION['user']['email']?></p>
+                            <p class=""><b>Nombre: </b></p>
+                            <p class=""><b>apellidos: </b></p>
+                            <p class=""><b>Carrera: </b></p>
+                            <p class=""><b>Semestre: </b></p>
+                            <p class=""><b>No. control: </b></p>
                         </div>
                         <div class="col py-5">
 
@@ -33,7 +33,7 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-header text-center" style="background: none;">
-                    <h1 class="display-4">Panel de Alumno</h1>
+                    <h1 class="display-4">Panel de Docente</h1>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -77,6 +77,17 @@
                                     <div class="input-group">
                                         <img class="" width="43%" src="img/icon_panel/semestre.png" alt="">
                                         <p class="display-4 ml-1">12</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center shadow card-panel mb-3">
+                                <a class="mt-3 text-black" href="#"><b>Alumnos</b></a>
+                                <a href="#" class="card-body">
+                                    <div class="input-group">
+                                        <img width="49%" src="img/icon_panel/alumno.png" alt="">
+                                        <p class="display-4 ml-1">5</p>
                                     </div>
                                 </a>
                             </div>
