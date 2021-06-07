@@ -1,0 +1,20 @@
+.bg-navyBlue{
+    background-color: #0C3866;
+    color: white;
+}
+
+.text-big{
+    font-size: 140%;
+}
+
+.shadow{
+    box-shadow: -4px 4px 3px #878787;
+}
+
+.my-border{
+    border-radius: 20px;
+}
+
+.btn-border{
+    border-radius: 15px;
+}
