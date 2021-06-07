@@ -9,8 +9,7 @@
     <title>AMATERASU</title>
 </head>
 <body>
-    <?php require_once 'view/navbar.php';?>
-    
+    <?php require_once 'view/nav.php'?>
     <?php
         if(isset($_GET['view'])){
             $url = explode("/", $_GET['view']);
@@ -19,11 +18,17 @@
                 case 'home': 
                     require_once 'view/home.php';
                     break;
+                case 'docente': 
+                    require_once 'view/docente/panel.php';
+                    break;
+                case 'alumno': 
+                    require_once 'view/alumno/panel.php';
+                    break;
                 case 'login': 
-                    require_once 'view/login.php';
+                    require_once 'view/login/login.php';
                     break;
                 case 'materias': 
-                    require_once 'view/materias.php';
+                    require_once 'view/admin/materias.php';
                     break;
 
                 default:
@@ -33,7 +38,7 @@
             }           
 
         }else{
-            require_once 'view/home.php';
+            require_once 'view/login/login.php';
         }
     ?>
 </body>
