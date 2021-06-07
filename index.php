@@ -9,19 +9,7 @@
     <title>AMATERASU</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <a class="btn btn-primary btn-block" href="home">Inicio</a>
-            </div>
-            <div class="col-2">
-                <a class="btn btn-primary btn-block" href="login">Iniciar sesion</a>
-            </div>
-            <div class="col-2">
-                <a class="btn btn-primary btn-block" href="registro">Registro</a>
-            </div>
-        </div>
-    </div>
+    <?php require_once 'view/nav.php'?>
     <?php
         if(isset($_GET['view'])){
             $url = explode("/", $_GET['view']);
@@ -29,6 +17,12 @@
             switch($url[0]){
                 case 'home': 
                     require_once 'view/home.php';
+                    break;
+                case 'docente': 
+                    require_once 'view/docente/panel.php';
+                    break;
+                case 'alumno': 
+                    require_once 'view/alumno/panel.php';
                     break;
                 case 'login': 
                     require_once 'view/login/login.php';
@@ -41,7 +35,7 @@
             }           
 
         }else{
-            require_once 'view/home.php';
+            require_once 'view/login/login.php';
         }
     ?>
 </body>
