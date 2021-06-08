@@ -45,7 +45,7 @@ body {
 	border-color: #0b244b;
 	border-radius: 25px;
 }
-.btn-blue-card{ /*botones usados dentro de la card*/
+.btn-blue-card{ /*botones usados dentro de la card y modal*/
 	background-color: #1b396a;
 	color: #ffffff;
 	border-color: #1b396a;
@@ -56,6 +56,19 @@ body {
 	background-color: #0b244b;
 	color: #ffffff;
 	border-color: #0b244b;
+	border-radius: 12px;
+}
+.btn-red-card{ /*botones usados dentro de la card y modal*/
+	background-color: #BB0101;
+	color: #ffffff;
+	border-color: #BB0101;
+	border-radius: 12px;
+}
+
+.btn-red-card:hover{ /*opcion hover para el boton de arriba*/
+	background-color: #970202;
+	color: #ffffff;
+	border-color: #970202;
 	border-radius: 12px;
 }
 
