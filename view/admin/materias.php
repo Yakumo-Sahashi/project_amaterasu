@@ -19,7 +19,7 @@
                             <hr>
                             <p class=""><b>Nombre: </b><!-- <?= $_SESSION['user']['email'] ?> -->
                             </p>
-                            <p class=""><b>Apellidos: </b></p>
+                            <p class=""><b>Apellidos: XD</b></p>
                             <p class=""><b>Área: </b></p>
                         </div>
                         <div class="col py-5">
