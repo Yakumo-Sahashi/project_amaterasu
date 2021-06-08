@@ -42,7 +42,7 @@
                                 <a class="mt-3 text-black" href="#"><b>Calificaciones</b></a>
                                 <a href="#" class="card-body">
                                     <div class="input-group">
-                                        <img class="" width="50%" src="img/icon_panel/calificaciones.png" alt="">
+                                        <img class="" width="60%" src="img/icon_panel/calificaciones.png" alt="">
                                         <p class="display-4 ml-1">10</p>
                                     </div>
                                 </a>
@@ -53,7 +53,7 @@
                                 <a class="mt-3 text-black" href="#"><b>Materias</b></a>
                                 <a href="#" class="card-body">
                                     <div class="input-group">
-                                        <img class="" width="70%" src="img/icon_panel/materias.png" alt="">
+                                        <img class="" width="60%" src="img/icon_panel/materias.png" alt="">
                                         <p class="display-4 ml-1">9</p>
                                     </div>
                                 </a>
@@ -64,7 +64,7 @@
                                 <a class="mt-3 text-black" href="#"><b>Exámenes</b></a>
                                 <a href="#" class="card-body">
                                     <div class="input-group">
-                                        <img width="50%" src="img/icon_panel/examen.png" alt="" srcset="">
+                                        <img width="60%" src="img/icon_panel/examen.png" alt="" srcset="">
                                         <p class="display-4 ml-1">3</p>
                                     </div>
                                 </a>
@@ -75,7 +75,7 @@
                                 <a class="mt-3 text-black" href="#"><b>Semestre</b></a>
                                 <a href="#" class="card-body">
                                     <div class="input-group">
-                                        <img class="" width="43%" src="img/icon_panel/semestre.png" alt="">
+                                        <img class="" width="60%" src="img/icon_panel/semestre.png" alt="">
                                         <p class="display-4 ml-1">12</p>
                                     </div>
                                 </a>
@@ -86,7 +86,7 @@
                                 <a class="mt-3 text-black" href="#"><b>Archivos totales</b></a>
                                 <a href="#" class="card-body">
                                     <div class="input-group">
-                                        <img width="49%" src="img/icon_panel/archivos.png" alt="">
+                                        <img width="60%" src="img/icon_panel/archivos.png" alt="">
                                         <p class="display-4 ml-1">5</p>
                                     </div>
                                 </a>

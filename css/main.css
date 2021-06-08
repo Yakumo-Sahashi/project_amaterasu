@@ -16,10 +16,10 @@ body {
 }
 
 
-@font-face {
+/*@font-face {
 	font-family: "RusselSquare";
 	src: url("../fonts/RussellSquare.ttf");
-}
+}*/
 
 
 .menu-fixed{ /*controla la posicion del nav*/
