@@ -1,5 +1,5 @@
 <?php
-	/* if (!isset($_SESSION['user'])) {
+/* if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
 	}else{
         if($_SESSION['user']['rol'] == "3"){
@@ -12,12 +12,13 @@
         <div class="col-md-3">
             <div class="card shadow card-login">
                 <div class="card-body text-center">
-                    <i class="text-b"><img src="<?=SERVIDOR?>img/usuario1.webp" class="img-fluid rounded-circle border border-dark" alt=""></i>
+                    <i class="text-b"><img src="<?= SERVIDOR ?>img/usuario1.webp" class="img-fluid rounded-circle border border-dark" alt=""></i>
                     <div class="row mt-4">
                         <div class="col-md-12">
                             <h3>Admin</h3>
                             <hr>
-                            <p class=""><b>Nombre: </b><!-- <?=$_SESSION['user']['email']?> --></p>
+                            <p class=""><b>Nombre: </b><!-- <?= $_SESSION['user']['email'] ?> -->
+                            </p>
                             <p class=""><b>Apellidos: </b></p>
                             <p class=""><b>Área: </b></p>
                         </div>
@@ -31,18 +32,25 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="card card-materias">
-                        <div class="input-group px-4 py-4">
-                            <span class="input-group-prepend">
-                                <div class="input-group-text bg-transparent border border-dark border-right-0">
-                                <i class="fas fa-search"></i>
-                                </div>
-                            </span>
-                            <input class="form-control py-2 border border-dark border-left-0 border" type="search"/>
-                            <span class="btn btn-blue-card mx-2 px-4 my-1"><b>Buscar</b></span>
-                            <span class="btn btn-blue-card mx-2 px-4 my-1"><b>Añadir</b></span>
+                    <div class="row card-materias mx-1 my-1">
+                        <div class="col-md-6 mt-3 px-4">
+                            <div class="input-group ">
+                                <span class="input-group-prepend">
+                                    <div class="input-group-text bg-transparent border border-dark border-right-0">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </span>
+                                <input class="form-control py-2 border border-dark border-left-0 border" type="search" />
+                            </div>
                         </div>
-                        <div class="px-4 py-4 text-center">
+                        <div class="col-md-3 mt-3">
+                            <span class="btn btn-blue-card btn-block"><b>Buscar</b></span>
+                        </div>
+                        <div class="col-md-3 mt-3">
+                            <span class="btn btn-blue-card btn-block"><b>Añadir</b></span>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="px-4 py-4 text-center">
                             <table class="table table-body border border-secondary table-hover table-responsive-xl">
                                 <thead class="table-head">
                                     <tr>
@@ -70,11 +78,16 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="text-center pb-4">
-                            <span class="btn btn-blue-card"><b>Volver al Panel de Control</b></span>
+                            <div class="text-center pb-4">
+                                <span class="btn btn-blue-card"><b>Volver al Panel de Control</b></span>
+                            </div>
                         </div>
                     </div>
+                    
+                    </div>
+
+                    
+
                 </div>
             </div>
         </div>
