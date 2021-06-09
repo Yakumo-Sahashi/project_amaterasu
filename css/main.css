@@ -1,0 +1,102 @@
+:root{
+	--color-azul: rgb(0, 0, 0);
+	--color-blanco: rgb(255,255,255);
+	--color-azul-cian: rgb(28, 88, 255);
+	--fuente-secundaria: "RusselSquare";
+	--fondo1: url("../img/back.jpg");
+	--fondo2: url("../img/background01.jpg");
+	--fondo3: url("../img/backk.jpg");
+	--letras-btn: #fff;
+}
+
+body {
+	background: var(--color-blanco) fixed no-repeat 0 0;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+@font-face {
+	font-family: "RusselSquare";
+	src: url("../fonts/RussellSquare.ttf");
+}
+
+
+.menu-fixed{ /*controla la posicion del nav*/
+	position: fixed;
+  	width: 100%;
+  	top:0;
+  	z-index: 1000;
+  	box-shadow: 0px 4px 3px rgba(0,0,0,0.2);
+}
+
+
+/*-------------------------botones---------------------------*/
+.btn-blue{
+	background-color: #1b396a;
+	color: #ffffff;
+	border-color: #1b396a;
+	border-radius: 25px;
+}
+
+.btn-blue:hover{
+	background-color: #0b244b;
+	color: #ffffff;
+	border-color: #0b244b;
+	border-radius: 25px;
+}
+
+.text-b{
+	color: #1b396a;
+}
+/*----------------link---------------------------------------*/
+/* a:link, a:visited, a:active {
+	text-decoration:none;
+	color: #1b396a;
+}
+ */
+
+
+
+.borde-right{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-left: none;
+    border-bottom: 2px  solid #214e97;
+}
+
+.borde-left{
+    border-top-left-radius: 25px; 
+    border-bottom-left-radius: 25px;
+    background: #fff;
+    border-right: none;
+    border-bottom: 2px  solid #214e97;
+}
+
+.card-login{
+    background: rgb(255, 255, 255, 1);
+    border-radius: 25px; 
+    border: 2px  solid #55b3d8;
+    border-bottom: 2px  solid #55b3d8;
+}
+
+.card-panel{
+	background: #fff;
+	font-size: x-large;
+	font-weight: bold;
+	border: 2px solid;
+	border-color: #5587d8;
+	border-radius: 22px;
+}
+.card-panel a{
+	text-decoration:none;
+	color: #1b396a;
+}
+
+.text-black{
+	color: #000 !important;
+}
+
+.shadow{
+	box-shadow: -3px 3px 5px rgb(153, 153, 153, 0.7);
+}
