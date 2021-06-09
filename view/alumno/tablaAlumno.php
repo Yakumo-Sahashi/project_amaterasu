@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="card mt-4" style="width: 17rem;">
-                <img class="card-img" src="img/perfil.png">
+                <img class="card-img" src="../../img/perfil.png">
                 <div class="card-body text-center">
                     <h1 class="card-title">Alumno</h1>
                 </div>
