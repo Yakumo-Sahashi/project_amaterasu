@@ -47,14 +47,14 @@
                                         <td>Séptimo</td>
                                         <td>Cálculo</td>
                                         <td>CCP6908</td>
-                                        <td><span class="bg-success borde-button px-3 py-1 mr-2"></span>Online</td>
+                                        <td><span class="btn btn-success borde-button mr-2"></span>Online</td>
                                     </tr>
                                     <tr>
                                         <td>Alberto</td>
                                         <td>García</td>
                                         <td>Gestión</td>
                                         <td>DFJ6705</td>
-                                        <td><span class="bg-danger borde-button px-3 py-1 mr-2"></span>Offline</td>
+                                        <td><span class="btn btn-danger borde-button mr-2"></span>Offline</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -44,14 +44,14 @@
                                 <tbody>
                                     <tr>
                                         <td>Quimica</td>
-                                        <td>Javier</td>
+                                        <td>C4</td>
                                         <td>industrial</td>
                                         <td>5</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
                                     </tr>
                                     <tr>
                                         <td>Sis. Web</td>
-                                        <td>Enrique</td>
+                                        <td>D1</td>
                                         <td>Sistemas</td>
                                         <td>6</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
