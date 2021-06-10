@@ -27,7 +27,10 @@
                 case 'login': 
                     require_once 'view/login/login.php';
                     break;
-
+                case 'tablaAlumnos': 
+                    require_once 'view/docente/tablaAlumno.php';
+                    break;
+        
                 default:
                     require_once 'view/404.php';
                     break;
