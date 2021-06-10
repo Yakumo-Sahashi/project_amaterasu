@@ -30,7 +30,9 @@
                 case 'tablaAlumnos': 
                     require_once 'view/docente/tablaAlumno.php';
                     break;
-        
+                case 'tablaUsuario': 
+                    require_once 'view/docente/tablaUsuario.php';
+                    break;
                 default:
                     require_once 'view/404.php';
                     break;
