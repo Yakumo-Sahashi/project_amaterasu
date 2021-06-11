@@ -19,10 +19,10 @@
                 case 'home': 
                     require_once 'view/home.php';
                     break;
-                case 'docentes': 
-                    require_once 'view/administrador/docentes.php';
+                case 'subir_docentes': 
+                    require_once 'view/admin/docentes.php';
                     break;
-                case 'examenes': 
+                case 'examenes_docentes': 
                     require_once 'view/docente/examenes.php';
                     break;
                 default:

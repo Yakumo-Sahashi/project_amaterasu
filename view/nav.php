@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarNav">    
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="btn btn-blue" href="home" style="color: #FFF;"><img class="mx-auto" src="img/ico_home.png" width="25px" height="25px" title="Inicio" style="color: #FFF;"> Inicio</a>
+          <a class="btn btn-blue" href="home"><img class="mx-auto" src="img/ico_home.png" width="25px" height="25px" title="Inicio"> Inicio</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -22,11 +22,11 @@
           <a class="btn btn-blue dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user ml-1"></i> <?=$_SESSION['user']['email'] ?></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <button type="button" class="dropdown-item btn btn-dark" id="cerrarSesion" ><i class="fas fa-power-off mr-2" style="color: #FFF;"></i>Cerrar Sesion</button>
+            <button type="button" class="dropdown-item btn btn-dark" id="cerrarSesion"><i class="fas fa-power-off mr-2"></i>Cerrar Sesion</button>
           </div>
       <?php else: ?>
         <li class="nav-item">
-          <a class="btn btn-blue" href="login" style="color: #FFF;">Iniciar Sesion <i class="fas fa-user ml-1"></i></a>
+          <a class="btn btn-blue" href="login">Iniciar Sesion <i class="fas fa-user ml-1"></i></a>
       <?php endif; ?>
         </li>
       </ul>
