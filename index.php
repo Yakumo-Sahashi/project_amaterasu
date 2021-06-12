@@ -25,6 +25,9 @@
                 case 'examenes_docentes': 
                     require_once 'view/docente/examenes.php';
                     break;
+                case 'asignar_calificaciones': 
+                        require_once 'view/docente/calificaciones.php';
+                        break;
                 default:
                     require_once 'view/404.php';
                     break;
