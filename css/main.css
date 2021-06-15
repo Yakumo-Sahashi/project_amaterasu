@@ -70,6 +70,26 @@ body {
 	border-radius: 50%;
 }
 
+.btn-panel{
+	background-color: #1b396a;
+	color: var(--color-blanco);
+	border-color: #1b396a;
+}
+
+.btn-panel:hover{
+	background-color: #0b244b;
+	color: var(--color-blanco);
+	border-color: #0b244b;
+}
+
+
+.select-cus{
+  color: #fff;
+  background: #1b396a;
+  border: 1px solid #ced4da;
+  appearance: none;
+}
+
 
 .text-b{
 	color: #1b396a;

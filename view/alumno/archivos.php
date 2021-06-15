@@ -44,10 +44,10 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">                                    
-                                                    <button class="btn btn-primary btn-block mb-1" type="button">Subir archivo <i class="fas fa-upload"></i></button>
+                                                    <button class="btn btn-panel btn-block mb-1" type="button">Subir archivo <i class="fas fa-upload"></i></button>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <button class="btn btn-primary btn-block mb-1" type="button">Descargar todo <i class="fas fa-download"></i></button>
+                                                    <button class="btn btn-panel btn-block mb-1" type="button">Descargar todo <i class="fas fa-download"></i></button>
                                                 </div>
                                                 </div>
                                             </div>
@@ -60,23 +60,23 @@
                                             <ul class="nav nav-tabs py-3" role=tablist>
                                                 <li class="nav-item mx-auto">
                                                     <a class="btn btn-primary active" href="#word" id="sec1-tab"
-                                                        aria-controls="word" data-toggle="tab" role="tab" aria-selected="true" style="width: 130px;">Word</a>
+                                                        aria-controls="word" data-toggle="tab" role="tab" aria-selected="true" style="width: 120px;">Word</a>
                                                 </li>
                                                 <li class="nav-item mx-auto">
                                                     <a class="btn btn-success" href="#excel" id="sec2-tab" aria-controls="excel"
-                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 130px;">Excel</a>
+                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 120px;">Excel</a>
                                                 </li>
                                                 <li class="nav-item mx-auto">
                                                     <a class="btn btn-danger" href="#pdf" id="sec3-tab" aria-controls="pdf"
-                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 130px;">PDF</a>
+                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 120px;">PDF</a>
                                                 </li>
                                                 <li class="nav-item mx-auto">
                                                     <a class="btn btn-warning" href="#jpg" id="sec4-tab" aria-controls="jpg"
-                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 130px;">JPG</a>
+                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 120px;">JPG</a>
                                                 </li>
                                                 <li class="nav-item mx-auto">
                                                     <a class="btn btn-info" href="#mp3" id="sec5-tab" aria-controls="mp3"
-                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 130px;">MP3</a>
+                                                        data-toggle="tab" role="tab" aria-selected="false" style="width: 120px;">MP3</a>
                                                 </li>                                            
                                             </ul>
                                         </div>
