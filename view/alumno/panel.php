@@ -65,8 +65,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card text-center shadow card-panel mb-3">
-                                <a class="mt-3 text-black" href="archivos"><b>Archivos totales</b></a>
-                                <a href="archivos" class="card-body">
+                                <a class="mt-3 text-black" href="grafica"><b>Archivos totales</b></a>
+                                <a href="grafica" class="card-body">
                                     <div class="input-group">
                                         <img width="60%" src="img/icon_panel/archivos.png" alt="">
                                         <p class="display-4 ml-1">5</p>

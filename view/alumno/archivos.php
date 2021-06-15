@@ -44,7 +44,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">                                    
-                                                    <button class="btn btn-panel btn-block mb-1" type="button">Subir archivo <i class="fas fa-upload"></i></button>
+                                                    <button class="btn btn-panel btn-block mb-1" data-toggle="modal" data-target="#subirArchivos">Subir archivo <i class="fas fa-upload"></i></button>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <button class="btn btn-panel btn-block mb-1" type="button">Descargar todo <i class="fas fa-download"></i></button>
@@ -157,4 +157,61 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<!-- Modal archivos-->
+<div class="modal fade" id="subirArchivos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title text-center" id="exampleModalLabel">Carga de archivos</h4>
+				<button class="close" data-dismiss="modal" aria-label="Cerrar" >
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<form id="subirArchivo">
+					<div class="row justify-content-around">
+                        <div class="col-md-11">
+                            <p class="">
+                                1. Elige un tipo de archivo.
+                                <br>2. Carga uno o más archivos del tipo elegido.
+                                <br>3. El tamaño no debe ser mayor a 2MB.
+                            </p>
+                        </div>
+						<div class="col-md-11">
+							<label for="tipo"><b>Elige el tipo de archivo</b></label>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-folder"></i></span>
+								</div>
+								<select name="tipo" id="tipo" class="custom-select">				
+									<option value="docx">documento de Word (.docx, .doc)</option>
+									<option value="pdf">Documento PDF (.pdf)</option>
+                                    <option value="xlsx">Hoja de calculo Excel (.xlsx)</option>
+                                    <option value="jpg">Imagen (.jpg)</option>
+                                    <option value="mp3">Audio formato mp3 (.pm3)</option>
+								</select>
+			        		</div>
+						</div>
+                        <div class="col-md-11">
+							<label for="archivo"><b>Elige el archivo(s)</b></label>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-folder-open"></i></span>
+								</div>
+								<input type="file" name="archivo" id="archivo" class="form-control">
+			        		</div>
+						</div>
+					</div>	        
+				</form>
+			</div>
+			<div class="modal-footer">
+                <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		    </div>
+		</div>
+	</div>					
 </div>

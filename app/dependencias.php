@@ -8,3 +8,4 @@
     <script src="<?=SERVIDOR?>js/jquery/jquery.js"></script>
     <script src="<?=SERVIDOR?>js/poper/popper.js"></script>
     <script src="<?=SERVIDOR?>js/b4/bootstrap.js"></script>
+    <script src="<?=SERVIDOR?>js/plotly/plotly.js"></script>

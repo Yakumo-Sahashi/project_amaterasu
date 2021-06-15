@@ -34,6 +34,9 @@
                 case 'calendario': 
                     require_once 'view/calendario.php';
                     break;
+                case 'grafica': 
+                    require_once 'view/alumno/grafica.php';
+                    break;
                 case 'login': 
                     require_once 'view/login/login.php';
                     break;
