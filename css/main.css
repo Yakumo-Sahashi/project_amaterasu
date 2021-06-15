@@ -2,10 +2,6 @@
 	--color-azul: rgb(0, 0, 0);
 	--color-blanco: rgb(255,255,255);
 	--color-azul-cian: rgb(28, 88, 255);
-	--fuente-secundaria: "RusselSquare";
-	--fondo1: url("../img/back.jpg");
-	--fondo2: url("../img/background01.jpg");
-	--fondo3: url("../img/backk.jpg");
 	--letras-btn: #fff;
 }
 
@@ -34,17 +30,46 @@ body {
 /*-------------------------botones---------------------------*/
 .btn-blue{
 	background-color: #1b396a;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #1b396a;
 	border-radius: 25px;
 }
 
 .btn-blue:hover{
 	background-color: #0b244b;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #0b244b;
 	border-radius: 25px;
 }
+
+.btn-descarga{
+	background-color: #44d120;
+	color: var(--color-blanco);
+	border-color: #38ac1b;
+	border-radius: 50%;
+}
+
+.btn-descarga:hover{
+	background-color: #38ac1b;
+	color: var(--color-blanco);
+	border-color: #44d120;
+	border-radius: 50%;
+}
+
+.btn-eliminar{
+	background-color: #ca0000;
+	color: var(--color-blanco);
+	border-color: #7c0a0a;
+	border-radius: 50%;
+}
+
+.btn-eliminar:hover{
+	background-color: #7c0a0a;
+	color: var(--color-blanco);
+	border-color: #ca0000;
+	border-radius: 50%;
+}
+
 
 .text-b{
 	color: #1b396a;
@@ -68,7 +93,7 @@ body {
 .borde-left{
     border-top-left-radius: 25px; 
     border-bottom-left-radius: 25px;
-    background: #fff;
+    background: var(--color-blanco);
     border-right: none;
     border-bottom: 2px  solid #214e97;
 }
@@ -81,7 +106,7 @@ body {
 }
 
 .card-panel{
-	background: #fff;
+	background: var(--color-blanco);
 	font-size: x-large;
 	font-weight: bold;
 	border: 2px solid;
@@ -100,3 +125,43 @@ body {
 .shadow{
 	box-shadow: -3px 3px 5px rgb(153, 153, 153, 0.7);
 }
+
+/* -------- cards archivos -------------------------------------- */
+.card-contorno{
+	background: none;
+	border: 1px solid;
+	border-color: #02135f;
+	border-radius: 10px;
+}
+
+.card-archivo{
+	background: none;
+	border: 1px solid;
+	border-color: #000;
+	border-radius: 17px;
+}
+
+/*-------------inicio efecto hover archivos-----------------------*/
+  
+  .contenerdor-btn{
+	position: relative;
+	overflow: hidden;
+  
+  }
+  
+  .boton-emergente{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	bottom: 0;
+	padding: 7px;  
+	transform: translateY(-50%);
+	transition: all 0.5s ease-out;
+  }
+  
+  .contenerdor-btn:hover .boton-emergente{
+	transform: translateY(-85%);
+	visibility: visible;
+	opacity: 100;
+  }
+/*-------------fin efecto hover archivos-----------------------*/

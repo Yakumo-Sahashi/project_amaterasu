@@ -28,6 +28,9 @@
                 case 'alumno': 
                     require_once 'view/alumno/panel.php';
                     break;
+                case 'archivos': 
+                    require_once 'view/alumno/archivos.php';
+                    break;
                 case 'calendario': 
                     require_once 'view/calendario.php';
                     break;
