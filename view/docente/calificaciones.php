@@ -23,8 +23,8 @@
                             <td><span class="btn btn-blue-card btn-sm text-white borde-button"  data-toggle="modal" data-target="#subirArchivosModal">Subir Archivo</span></td>
                         </div>
                         <div class="col-md-12">
-                            <div class="px-4 py-4 text-center">
-                            <table class="table table-body border border-secondary table-hover table-responsive-xl">
+                            <div class="py-4 text-center">
+                            <table class="table table-body border border-secondary table-hover table-responsive-xl table-md">
                                 <thead class="table-head">
                                     <tr>
                                         <th scope="col">Materia</th>
@@ -32,7 +32,7 @@
                                         <th scope="col">Semestre</th>
                                         <th scope="col">Unidad</th>
                                         <th scope="col">Examen</th>
-                                        <th scope="col">Opciones</th>
+                                        <th scope="col" colspan="3">Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,25 +43,21 @@
                                         <td>1</td>
                                         <td>ExamenU1.docx</td>
                                         <td>
-                                        <div class="row justify-content-around">
-                                            <div class="col-4">
-                                                <span class="btn btn-primary btn-sm text-white borde-button"  data-toggle="modal" data-target="#visualizarArchivoModal">
-                                                    <i class="fas fa-eye"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-4">
-                                                <span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarInformacionModal">
-                                                    <i class="fas fa-edit"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-4">
-                                                <span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#subirArchivosModal">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                        </i></span></td>
+                                            <span class="btn btn-primary btn-sm borde-button"  data-toggle="modal" data-target="#visualizarArchivoModal">
+                                                <i class="fas fa-eye"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarInformacionModal">
+                                                <i class="fas fa-edit"></i>
+                                            </span>
+                                                
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-danger btn-sm borde-button">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

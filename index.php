@@ -19,13 +19,13 @@
                 case 'home': 
                     require_once 'view/home.php';
                     break;
-                case 'subir_docentes': 
+                case 'subirDocentes': 
                     require_once 'view/admin/docentes.php';
                     break;
-                case 'examenes_alumnos': 
-                    require_once 'view/docente/examenes.php';
+                case 'examenesAlumnos': 
+                    require_once 'view/alumno/examenes.php';
                     break;
-                case 'asignar_calificaciones': 
+                case 'asignarCalificaciones': 
                         require_once 'view/docente/calificaciones.php';
                         break;
                 default:
