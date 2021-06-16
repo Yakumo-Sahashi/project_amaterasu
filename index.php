@@ -22,7 +22,7 @@
                 case 'subir_docentes': 
                     require_once 'view/admin/docentes.php';
                     break;
-                case 'examenes_docentes': 
+                case 'examenes_alumnos': 
                     require_once 'view/docente/examenes.php';
                     break;
                 case 'asignar_calificaciones': 

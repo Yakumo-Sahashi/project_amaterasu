@@ -16,11 +16,8 @@
             <div class="card shadow card-login">
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-6 mt-3 px-4 text-right">
+                        <div class="col-md-12 mt-3 px-4 text-center">
                                 <h3>Examenes asignados</h3>
-                        </div>
-                        <div class="col-md-6 mt-4 px-4 text-center">
-                                <span class="btn btn-blue-card btn-sm text-white borde-button"  data-toggle="modal" data-target="#subirArchivosModal">Subir Archivo</span>
                         </div>
                         <div class="col-md-12">
                             <div class="px-4 py-4 text-center">
@@ -36,6 +33,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>POO</td>
+                                        <td>Programacion</td>
+                                        <td>5</td>
+                                        <td>1</td>
+                                        <td>ExamenU1.pdf</td>
+                                        <td><span class="btn btn-blue-card btn-sm text-white borde-button"  data-toggle="modal" data-target="#subirArchivosModal">Subir Archivo</span></td>
+                                    </tr>
                                     <tr>
                                         <td>Estructura de datos</td>
                                         <td>Programacion</td>
