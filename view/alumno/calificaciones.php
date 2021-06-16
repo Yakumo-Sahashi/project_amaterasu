@@ -72,12 +72,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col-md-12 text-center">
-            <h5 class="modal-title" id="exampleModalLabel">Vista Previa</h5>
-        </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel"><b>Vista Previa</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
       </div>
       <div class="modal-body">
             <div id="archivoObtenido">

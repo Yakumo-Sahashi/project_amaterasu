@@ -82,29 +82,27 @@
 <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col-md-12 text-center">
-            <h5 class="modal-title" id="exampleModalLabel">Añadir Examenes</h5>
-        </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel"><b>Añadir Examenes</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
       </div>
       <div class="modal-body">
         <form action="">
             <div class="col-md-12">
-                <label for="">Materia y carrera</label>
+                <label for=""><b><h5>Materia y carrera</h5></b> </label>
                 <select name="" id="" class="form-control">
                     <option value="">Materias</option>
                 </select>
-                <label for="">Unidad</label>
+                <label for=""><b><h5>Unidad</h5></b> </label>
                 <select name="" id="" class="form-control">
                     <option value="">Unidad</option>
                 </select>
-                <label for="">Eligue el tipo de archivo</label>
+                <label for=""><b><h5>Eligue el tipo de archivo</h5></b> </label>
                 <select name="" id="" class="form-control">
                     <option value="">Archivo</option>
                 </select>
-                <label for="">eligue el archivo</label>
+                <label for=""><b><h5>eligue el archivo</h5></b> </label>
                 <input type="file" class="form-control">
             </div>
         </form>
@@ -123,12 +121,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col-md-12 text-center">
-            <h5 class="modal-title" id="exampleModalLabel">Vista Previa</h5>
-        </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel"><b>Vista previa</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
       </div>
       <div class="modal-body">
             <div id="archivoObtenido">
@@ -148,29 +144,27 @@
 <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <div class="col-md-12 text-center">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Informacion</h5>
-        </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel"><b>Editar Informacion</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
       </div>
       <div class="modal-body">
         <form action="">
             <div class="col-md-12">
-                <label for="">Materia y carrera</label>
+                <b><h5>Materia y carrera</h5></b> 
                 <select name="" id="" class="form-control">
                     <option value="">Materias</option>
                 </select>
-                <label for="">Unidad</label>
+                <b><h5>Unidad</h5></b> 
                 <select name="" id="" class="form-control">
                     <option value="">Unidad</option>
                 </select>
-                <label for="">Eligue el tipo de archivo</label>
+                <b><h5>Eligue el tipo de archivo</h5></b> 
                 <select name="" id="" class="form-control">
                     <option value="">Archivo</option>
                 </select>
-                <label for="">eligue el archivo</label>
+                <b><h5>eligue el archivo</h5></b> 
                 <input type="file" class="form-control">
             </div>
         </form>
