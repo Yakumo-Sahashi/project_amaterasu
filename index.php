@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página diseñada por el equipo AMATERASU"/>
     <?php require_once 'app/config.php';?>
     <?php require_once 'app/dependencias.php';?>
     <title>AMATERASU</title>
@@ -19,26 +18,18 @@
                 case 'home': 
                     require_once 'view/home.php';
                     break;
-                case 'docente': 
-                    require_once 'view/docente/panel.php';
+                case 'subirDocentes': 
+                    require_once 'view/admin/docentes.php';
                     break;
-                case 'alumno': 
-                    require_once 'view/alumno/panel.php';
+                case 'examenesAlumnos': 
+                    require_once 'view/alumno/examenes.php';
                     break;
-                case 'login': 
-                    require_once 'view/login/login.php';
-                    break;
-                case 'materias': 
-                    require_once 'view/docente/materias.php';
-                    break;
-                case 'usuarios_activos': 
-                    require_once 'view/admin/usuariosActivos.php';
-                    break;
-
+                case 'asignarCalificaciones': 
+                        require_once 'view/docente/calificaciones.php';
+                        break;
                 default:
                     require_once 'view/404.php';
                     break;
-
             }           
 
         }else{

@@ -1,5 +1,6 @@
 <div class="card shadow card-login">
     <div class="card-body text-center">
+<<<<<<< HEAD
         <i class="fas fa-user fa-9x text-b img-fluid"></i>
         <div class="row mt-4">
             <div class="col-md-12">
@@ -8,6 +9,15 @@
                 <hr>
                 <p class=""><b>Nombre: </b></p>
                 <p class=""><b>Apellidos: </b></p>
+=======
+        <i class="fas fa-user fa-9x text-b"></i>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Alumno</h3>
+                <hr>
+                <p class=""><b>Nombre: </b></p>
+                <p class=""><b>apellidos: </b></p>
+>>>>>>> dfc7931abe93edd06066306cb4aaad9e84f762a5
                 <p class=""><b>Carrera: </b></p>
                 <p class=""><b>Semestre: </b></p>
                 <p class=""><b>No. control: </b></p>
@@ -16,6 +26,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
 
 <!-- Modal Editar Imagen-->
@@ -47,3 +58,6 @@
         </div>
     </div>
 </div>
+=======
+</div>
+>>>>>>> dfc7931abe93edd06066306cb4aaad9e84f762a5
