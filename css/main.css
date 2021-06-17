@@ -5,18 +5,17 @@
 	--letras-btn: #fff;
 }
 
+@font-face {
+	font-family: "Montserrat";
+	src: url("../fonts/Montserrat-Regular.ttf");
+}
+
 body {
 	background: var(--color-blanco) fixed no-repeat 0 0;
 	background-size: cover;
 	background-position: center center;
+	font-family: "Montserrat", Regular;
 }
-
-
-/*@font-face {
-	font-family: "RusselSquare";
-	src: url("../fonts/RussellSquare.ttf");
-}*/
-
 
 .menu-fixed{ /*controla la posicion del nav*/
 	position: fixed;

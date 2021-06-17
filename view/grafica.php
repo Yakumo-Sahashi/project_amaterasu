@@ -10,7 +10,7 @@
 <div class="container py-4">
     <div class="row justify-content-around">
         <div class="col-md-3">
-           <?php require_once 'datosUsuario.php';?>
+           
         </div>
         <div class="col-md-9">
             <div class="card shadow card-login">

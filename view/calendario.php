@@ -1,10 +1,15 @@
 <?php
+    $direccion ="";
 /* 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
 	}else{
-        if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}
+        if($_SESSION['user']['rol'] == "1"){
+			$direccion = "admin";
+		}elseif($_SESSION['user']['rol'] == "2"){
+            $direccion = "docente";
+        }else{
+            $direccion = "alumno";
+        }
     } */
 ?>
 <div class="container py-4">
@@ -21,7 +26,7 @@
                         </div>
 
                         <div class="col-md-7 py-5">
-                            <a class="btn btn-block btn-blue text-white" href="admin">Volver al panel</a>
+                            <a class="btn btn-block btn-blue text-white" href="<?=$direccion;?>">Volver al panel</a>
                         </div>
                     </div>     
                 </div>

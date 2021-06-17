@@ -9,10 +9,10 @@
                 <p class=""><b>Nombre: </b></p>
                 <p class=""><b>Apellidos: </b></p>
                 <p class=""><b>Carrera: </b></p>
-                <p class=""><b>Semestre: </b></p>
-                <p class=""><b>No. control: </b></p>
+                <p class=""><b>Email: </b></p>
+                <p class=""><b>RFC: </b></p>
             </div>
-            <div class="col py-5">
+            <div class="col py-4 mb-4">
             </div>
         </div>
     </div>
