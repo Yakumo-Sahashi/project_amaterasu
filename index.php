@@ -33,10 +33,12 @@
                 case 'tablaUsuario': 
                     require_once 'view/docente/tablaUsuario.php';
                     break;
+                case 'calendario':
+                    require_once 'view/calendario.php';
+                    break;
                 default:
                     require_once 'view/404.php';
                     break;
-
             }           
 
         }else{
