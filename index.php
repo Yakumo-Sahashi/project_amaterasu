@@ -40,6 +40,12 @@
                 case 'login': 
                     require_once 'view/login/login.php';
                     break;
+                case 'materias': 
+                    require_once 'view/docente/materias.php';
+                    break;
+                case 'usuarios_activos': 
+                    require_once 'view/admin/usuariosActivos.php';
+                    break;
 
                 default:
                     require_once 'view/404.php';
