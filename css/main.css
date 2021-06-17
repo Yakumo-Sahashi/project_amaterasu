@@ -2,10 +2,6 @@
 	--color-azul: rgb(0, 0, 0);
 	--color-blanco: rgb(255,255,255);
 	--color-azul-cian: rgb(28, 88, 255);
-	--fuente-secundaria: "RusselSquare";
-	--fondo1: url("../img/back.jpg");
-	--fondo2: url("../img/background01.jpg");
-	--fondo3: url("../img/backk.jpg");
 	--letras-btn: #fff;
 }
 
@@ -16,10 +12,10 @@ body {
 }
 
 
-@font-face {
+/*@font-face {
 	font-family: "RusselSquare";
 	src: url("../fonts/RussellSquare.ttf");
-}
+}*/
 
 
 .menu-fixed{ /*controla la posicion del nav*/
@@ -34,48 +30,66 @@ body {
 /*-------------------------botones---------------------------*/
 .btn-blue{
 	background-color: #1b396a;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #1b396a;
 	border-radius: 25px;
 }
 
 .btn-blue:hover{
 	background-color: #0b244b;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #0b244b;
 	border-radius: 25px;
 }
-.btn-blue-card{ /*botones usados dentro de la card y modal*/
+
+.btn-descarga{
+	background-color: #44d120;
+	color: var(--color-blanco);
+	border-color: #38ac1b;
+	border-radius: 50%;
+}
+
+.btn-descarga:hover{
+	background-color: #38ac1b;
+	color: var(--color-blanco);
+	border-color: #44d120;
+	border-radius: 50%;
+}
+
+.btn-eliminar{
+	background-color: #ca0000;
+	color: var(--color-blanco);
+	border-color: #7c0a0a;
+	border-radius: 50%;
+}
+
+.btn-eliminar:hover{
+	background-color: #7c0a0a;
+	color: var(--color-blanco);
+	border-color: #ca0000;
+	border-radius: 50%;
+}
+
+.btn-panel{
 	background-color: #1b396a;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #1b396a;
-	border-radius: 12px;
 }
 
-.btn-blue-card:hover{ /*opcion hover para el boton de arriba*/
+.btn-panel:hover{
 	background-color: #0b244b;
-	color: #ffffff;
+	color: var(--color-blanco);
 	border-color: #0b244b;
-	border-radius: 12px;
-}
-.btn-red-card{ /*botones usados dentro de la card y modal*/
-	background-color: #BB0101;
-	color: #ffffff;
-	border-color: #BB0101;
-	border-radius: 12px;
 }
 
-.btn-red-card:hover{ /*opcion hover para el boton de arriba*/
-	background-color: #970202;
-	color: #ffffff;
-	border-color: #970202;
-	border-radius: 12px;
+
+.select-cus{
+  color: #fff;
+  background: #1b396a;
+  border: 1px solid #ced4da;
+  appearance: none;
 }
 
-.borde-button{ /*opciones para el borde del boton editar*/
-	border-radius: 10px;
-	border: 1px solid #707070;
-}
 
 .text-b{
 	color: #1b396a;
@@ -99,12 +113,10 @@ body {
 .borde-left{
     border-top-left-radius: 25px; 
     border-bottom-left-radius: 25px;
-    background: #fff;
+    background: var(--color-blanco);
     border-right: none;
     border-bottom: 2px  solid #214e97;
 }
-
-
 
 .card-login{
     background: rgb(255, 255, 255, 1);
@@ -114,7 +126,7 @@ body {
 }
 
 .card-panel{
-	background: #fff;
+	background: var(--color-blanco);
 	font-size: x-large;
 	font-weight: bold;
 	border: 2px solid;
@@ -126,12 +138,6 @@ body {
 	color: #1b396a;
 }
 
-.card-materias{ /* opciones para el borde de la card interior */
-	background: rgb(255, 255, 255, 1);
-    border-radius: 18px; 
-    border: 1px  solid #1b396a;
-}	
-
 .text-black{
 	color: #000 !important;
 }
@@ -140,13 +146,42 @@ body {
 	box-shadow: -3px 3px 5px rgb(153, 153, 153, 0.7);
 }
 
-.table-body{ /*color del cuerpo de la tabla*/
-	background-color: #E2F0FF;
-	width: 100%;
+/* -------- cards archivos -------------------------------------- */
+.card-contorno{
+	background: none;
+	border: 1px solid;
+	border-color: #02135f;
+	border-radius: 10px;
 }
 
-.table-head{ /*color de la cabecera de la tabla*/
-	background-color: #3378BF;
-	color: white;
-	width: 100%;
+.card-archivo{
+	background: none;
+	border: 1px solid;
+	border-color: #000;
+	border-radius: 17px;
 }
+
+/*-------------inicio efecto hover archivos-----------------------*/
+  
+  .contenerdor-btn{
+	position: relative;
+	overflow: hidden;
+  
+  }
+  
+  .boton-emergente{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	bottom: 0;
+	padding: 7px;  
+	transform: translateY(-50%);
+	transition: all 0.5s ease-out;
+  }
+  
+  .contenerdor-btn:hover .boton-emergente{
+	transform: translateY(-85%);
+	visibility: visible;
+	opacity: 100;
+  }
+/*-------------fin efecto hover archivos-----------------------*/
