@@ -10,3 +10,4 @@
 <script src="<?=SERVIDOR;?>js/b4/bootstrap.js"></script>
 <script src="<?=SERVIDOR;?>js/plotly/plotly.js"></script>
 <script src="<?=SERVIDOR;?>js/main.js"></script>
+<script src="<?=SERVIDOR?>controller/funciones_login.js"></script>

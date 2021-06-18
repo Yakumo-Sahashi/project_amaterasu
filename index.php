@@ -10,8 +10,10 @@
     <title>AMATERASU</title>
 </head>
 <body>
-    <?php require_once 'view/nav.php'?>
-    <?php
+    <?php 
+        session_start();
+        require_once 'view/nav.php';
+        
         if(isset($_GET['view'])){
             $url = explode("/", $_GET['view']);
 
