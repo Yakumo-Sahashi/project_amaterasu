@@ -1,6 +1,6 @@
 <?php
     $direccion ="";
-/* 	if (!isset($_SESSION['user'])) {
+	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
 	}else{
         if($_SESSION['user']['rol'] == "1"){
@@ -10,12 +10,15 @@
         }else{
             $direccion = "alumno";
         }
-    } */
+    }
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
-        <div class="col-md-3">
-           <?php require_once 'docente/datosUsuario.php';?>
+        <div class="col col-12 d-md-none">
+            <?php require ''.$direccion.'/navResponsive.php';?>  
+        </div>
+        <div class="col d-none d-md-block col-md-3">
+            <?php require ''.$direccion.'/datosUsuario.php';?>
         </div>
         <div class="col-md-9">
             <div class="card shadow card-login">

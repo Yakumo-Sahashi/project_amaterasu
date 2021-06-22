@@ -1,31 +1,17 @@
 <?php
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}else{
-        if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}
+	}elseif($_SESSION['user']['rol'] != "3"){
+		echo '<script> window.location="docente" </script>';
     }
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
-        <div class="col-md-3">
-            <div class="card border-0">
-                <div class="card-body text-center">
-                    <i class="fas fa-user fa-9x text-b"></i>
-                    <div class="row mt-4">
-                        <div class="col-md-12">
-                            <h3>Alumno</h3>
-                            <hr>
-                            <p class=""><b>Nombre: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>apellidos: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>Carrera: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>Semestre: </b><?=$_SESSION['user']['email']?></p>
-                            <p class=""><b>No. control: </b><?=$_SESSION['user']['email']?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col col-12 d-md-none">
+            <?php require_once 'navResponsive.php';?>
+        </div>
+        <div class="col d-none d-md-block col-md-3">
+            <?php require 'datosUsuario.php';?>
         </div>
         <div class="col-md-7 py-2 align-self-center">
             <div class="card">

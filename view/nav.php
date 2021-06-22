@@ -16,6 +16,11 @@
           <a class="btn btn-blue" href="home"><img class="mx-auto" src="img/ico_home.png" width="25px" height="25px" title="Inicio"> Inicio</a>
         </li>
       </ul>
+      <ul class="navbar-nav ">
+        <li class="nav-item mx-auto d-block">
+          <a href="semestre" class="btn btn-blue"><b>Ene-Jun 2021</b></a>
+        </li>
+      </ul>
       <ul class="navbar-nav">
       <?php if (!empty($_SESSION['user']['email'])):?>
         <li class="nav-item dropdown">

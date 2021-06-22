@@ -1,16 +1,24 @@
 <?php
-/* 	if (!isset($_SESSION['user'])) {
+    $direccion ="";
+	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
 	}else{
-        if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}
-    } */
+        if($_SESSION['user']['rol'] == "1"){
+			$direccion = "admin";
+		}elseif($_SESSION['user']['rol'] == "2"){
+            $direccion = "docente";
+        }else{
+            $direccion = "alumno";
+        }
+    }
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
-        <div class="col-md-3">
-            <?php //require_once 'datosUsuario.php';?>
+        <div class="col col-12 d-md-none">
+            <?php require ''.$direccion.'/navResponsive.php';?>  
+        </div>
+        <div class="col d-none d-md-block col-md-3">
+            <?php require ''.$direccion.'/datosUsuario.php';?>
         </div>
         <div class="col-md-9">
             <div class="card shadow card-login">
@@ -26,7 +34,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <select class="form-control" name="materia" id="materia">
+                                                    <select class="form-control mb-1" name="materia" id="materia">
                                                         <option value="">Elegir materia</option>
                                                         <option value="">materia1</option>
                                                         <option value="">materia2</option>
@@ -36,7 +44,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <select class="form-control" name="semestre" id="semestre">
+                                                    <select class="form-control mb-1" name="semestre" id="semestre">
                                                         <option value="">Semestre</option>
                                                         <option value="">Ene - Jun 2021</option>
                                                         <option value="">Ago - dic 2021</option>
@@ -148,7 +156,7 @@
                             </div>
                             <div class="row justify-content-around">
                                 <div class="col-md-4 mt-4 mb-4">
-                                    <a class="btn btn-blue btn-block" href="alumno">Volver al panel</a>
+                                    <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
                                 </div>
                             </div>
                         </div>

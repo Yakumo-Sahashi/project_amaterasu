@@ -1,11 +1,9 @@
 <?php
-/* 	if (!isset($_SESSION['user'])) {
+	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}else{
-        if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}
-    } */
+	}elseif($_SESSION['user']['rol'] != "3"){
+		echo '<script> window.location="docente" </script>';
+    }
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
