@@ -22,7 +22,7 @@
           <a class="btn btn-blue dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user ml-1"></i> <?=$_SESSION['user']['email'] ?></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <button type="button" class="dropdown-item btn btn-dark" id="cerrarSesion"><i class="fas fa-power-off mr-2"></i>Cerrar Sesion</button>
+            <button type="button" class="dropdown-item btn btn-dark" id="btnCerrarSesion"><i class="fas fa-power-off mr-2"></i>Cerrar Sesion</button>
           </div>
       <?php else: ?>
         <li class="nav-item">

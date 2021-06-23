@@ -59,7 +59,7 @@
                                 </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <span class="btn btn-blue-card"><b>Volver al Panel de Control</b></span>
+                                <a href="docente" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
                             </div>
                         </div>
                     </div>             

@@ -6,10 +6,8 @@
 			echo '<script> window.location="alumno" </script>';
 		}
     } */
-
-    
-   
 ?>
+
 <div class="container py-4">
     <div class="row justify-content-around">
         <div class="col-md-3">
@@ -20,7 +18,7 @@
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
                         <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group ">
+                            <div class="input-group">
                                 <span class="input-group-prepend">
                                     <div class="input-group-text bg-transparent border border-dark border-right-0">
                                         <i class="fas fa-search"></i>
@@ -36,36 +34,45 @@
                             <span class="btn btn-blue-card btn-block" data-toggle="modal" data-target="#añadirMateriaModal"><b>Añadir</b></span>
                         </div>
                         <div class="col-md-12">
-                            <div class="px-4 py-4 text-center">
-                            <table class="table table-body border border-secondary table-hover table-responsive-xl">
+                            <div class="py-4 text-center">
+                            <table class="table table-body table-sm border border-secondary table-hover table-responsive-md">
                                 <thead class="table-head">
                                     <tr>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Prof. Asignado</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
                                         <th scope="col">Carrera</th>
+                                        <th scope="col">N° de Control</th>
                                         <th scope="col">Semestre</th>
-                                        <th scope="col">Editar Horarios</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Actualizar</th>
+                                        <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Quimica</td>
-                                        <td>Javier</td>
-                                        <td>industrial</td>
+                                        <td>Eduardo</td>
+                                        <td>Martinez</td>
+                                        <td>Industrial</td>
+                                        <td>l162080010</td>
                                         <td>5</td>
+                                        <td>Programacion</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span></td>
+                                        <td><span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarMateriaModal"><i class="fas fa-trash"></i></span></td>
                                     </tr>
                                     <tr>
-                                        <td>Sis. Web</td>
-                                        <td>Enrique</td>
+                                        <td>Jorge</td>
+                                        <td>Villa</td>
                                         <td>Sistemas</td>
-                                        <td>6</td>
+                                        <td>l172080018</td>
+                                        <td>7</td>
+                                        <td>Bases de Datos</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span></td>
+                                        <td><span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarMateriaModal"><i class="fas fa-trash"></i></span></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="admin" class="btn text-white btn-blue-card"><b>Volver al Panel de Control</b></a>
+                                <span class="btn btn-blue-card"><b>Volver al Panel de Control</b></span>
                             </div>
                         </div>
                     </div>             
@@ -125,7 +132,7 @@
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-blue-card" id="btnAnadir"><b>Añadir</b></button>
+                <button type="button" class="btn btn-blue-card"><b>Añadir</b></button>
                 <button type="button" class="btn btn-red-card" data-dismiss="modal"><b>Cancelar</b></button>
             </div>
         </div>
@@ -188,4 +195,3 @@
         </div>
     </div>
 </div>
-
