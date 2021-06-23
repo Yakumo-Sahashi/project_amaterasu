@@ -1,7 +1,7 @@
 <?php
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}elseif($_SESSION['user']['rol'] != "2"){
+	}elseif($_SESSION['user']['rol'] != "2" || $_SESSION['user']['admin'] != "1" ){
 		echo '<script> window.location="alumno" </script>';
     }
 ?>
@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
                         <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group">
+                            <div class="input-group ">
                                 <span class="input-group-prepend">
                                     <div class="input-group-text bg-transparent border border-dark border-right-0">
                                         <i class="fas fa-search"></i>
@@ -34,45 +34,36 @@
                             <span class="btn btn-blue-card btn-block" data-toggle="modal" data-target="#añadirMateriaModal"><b>Añadir</b></span>
                         </div>
                         <div class="col-md-12">
-                            <div class="py-4 text-center">
-                            <table class="table table-body table-sm border border-secondary table-hover table-responsive-md">
+                            <div class="px-4 py-4 text-center">
+                            <table class="table table-body border border-secondary table-hover table-responsive-xl">
                                 <thead class="table-head">
                                     <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellidos</th>
-                                        <th scope="col">Carrera</th>
-                                        <th scope="col">N° de Control</th>
-                                        <th scope="col">Semestre</th>
                                         <th scope="col">Materia</th>
-                                        <th scope="col">Actualizar</th>
-                                        <th scope="col">Eliminar</th>
+                                        <th scope="col">Prof. Asignado</th>
+                                        <th scope="col">Carrera</th>
+                                        <th scope="col">Semestre</th>
+                                        <th scope="col">Editar Horarios</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Eduardo</td>
-                                        <td>Martinez</td>
-                                        <td>Industrial</td>
-                                        <td>l162080010</td>
+                                        <td>Quimica</td>
+                                        <td>Javier</td>
+                                        <td>industrial</td>
                                         <td>5</td>
-                                        <td>Programacion</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span></td>
-                                        <td><span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarMateriaModal"><i class="fas fa-trash"></i></span></td>
                                     </tr>
                                     <tr>
-                                        <td>Jorge</td>
-                                        <td>Villa</td>
+                                        <td>Sis. Web</td>
+                                        <td>Enrique</td>
                                         <td>Sistemas</td>
-                                        <td>l172080018</td>
-                                        <td>7</td>
-                                        <td>Bases de Datos</td>
+                                        <td>6</td>
                                         <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span></td>
-                                        <td><span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarMateriaModal"><i class="fas fa-trash"></i></span></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <span class="btn btn-blue-card"><b>Volver al Panel de Control</b></span>
+                                <a href="admin" class="btn text-white btn-blue-card"><b>Volver al Panel de Control</b></a>
                             </div>
                         </div>
                     </div>             
@@ -195,3 +186,4 @@
         </div>
     </div>
 </div>
+

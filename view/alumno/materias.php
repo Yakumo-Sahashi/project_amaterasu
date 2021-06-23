@@ -1,11 +1,10 @@
 <?php
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}elseif($_SESSION['user']['rol'] != "2"){
-		echo '<script> window.location="alumno" </script>';
+	}elseif($_SESSION['user']['rol'] != "3"){
+		echo '<script> window.location="docente" </script>';
     }
 ?>
-
 <div class="container py-4">
     <div class="row justify-content-around">
         <div class="col col-12 d-md-none">
@@ -19,7 +18,7 @@
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
                         <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group">
+                            <div class="input-group ">
                                 <span class="input-group-prepend">
                                     <div class="input-group-text bg-transparent border border-dark border-right-0">
                                         <i class="fas fa-search"></i>
@@ -36,39 +35,63 @@
                             <table class="table table-body border border-secondary table-hover table-responsive-xl">
                                 <thead class="table-head">
                                     <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellidos</th>
-                                        <th scope="col">Carrera</th>
-                                        <th scope="col">N° de Control</th>
-                                        <th scope="col">Semestre</th>
                                         <th scope="col">Materia</th>
+                                        <th scope="col">Aula</th>
+                                        <th scope="col">Carrera</th>
+                                        <th scope="col">Semestre</th>
+                                        <th scope="col">Ver Horarios</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Eduardo</td>
-                                        <td>Martinez</td>
-                                        <td>Industrial</td>
-                                        <td>l162080010</td>
+                                        <td>Quimica</td>
+                                        <td>C4</td>
+                                        <td>industrial</td>
                                         <td>5</td>
-                                        <td>Programacion</td>
+                                        <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
                                     </tr>
                                     <tr>
-                                        <td>Jorge</td>
-                                        <td>Villa</td>
+                                        <td>Sis. Web</td>
+                                        <td>D1</td>
                                         <td>Sistemas</td>
-                                        <td>l172080018</td>
-                                        <td>7</td>
-                                        <td>Bases de Datos</td>
+                                        <td>6</td>
+                                        <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="docente" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
+                                <a href="alumno" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
                             </div>
                         </div>
                     </div>             
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Ver Horarios-->
+<div class="modal fade" id="verHorariosModal" tabindex="-1" aria-labelledby="verHorariosModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="verHorariosModalLabel"><b>Instituto Tecnológico de Milpa Alta II</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <img src="<?=SERVIDOR;?>img/horario.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-blue-card"><b>Descargar</b></button>
             </div>
         </div>
     </div>

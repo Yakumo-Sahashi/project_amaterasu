@@ -1,17 +1,13 @@
 <?php
 	if (isset($_SESSION['user'])) {
-		if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}else{
-			echo '<script> window.location="alumno" </script>';
-		}
+        echo '<script> window.location="home" </script>';
 	}
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
         <div class="col-md-4 py-2">
-            <form id="login_inic" class="form-grup mb-3">
-                <div class="card card-login">
+            <form id="frmLogin" class="form-grup mb-3">
+                <div class="card card-login shadow">
                     <div class="card-body">
                         <img src="img/itma2.png" class="mx-auto d-block py-2 mt-2 mb-2" width="70%" alt="">
                         <input type="text" value="1" name="funcion" hidden>

@@ -16,13 +16,18 @@
           <a class="btn btn-blue" href="home"><img class="mx-auto" src="img/ico_home.png" width="25px" height="25px" title="Inicio"> Inicio</a>
         </li>
       </ul>
+      <ul class="navbar-nav ">
+        <li class="nav-item mx-auto d-block">
+          <a href="semestre" class="btn btn-blue"><b>Ene-Jun 2021</b></a>
+        </li>
+      </ul>
       <ul class="navbar-nav">
       <?php if (!empty($_SESSION['user']['email'])):?>
         <li class="nav-item dropdown">
           <a class="btn btn-blue dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user ml-1"></i> <?=$_SESSION['user']['email'] ?></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <button type="button" class="dropdown-item btn btn-dark" id="cerrarSesion"><i class="fas fa-power-off mr-2"></i>Cerrar Sesion</button>
+            <button type="button" class="dropdown-item btn btn-dark" id="btnCerrarSesion"><i class="fas fa-power-off mr-2"></i>Cerrar Sesion</button>
           </div>
       <?php else: ?>
         <li class="nav-item">

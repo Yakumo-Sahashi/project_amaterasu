@@ -1,11 +1,10 @@
 <?php
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}elseif($_SESSION['user']['rol'] != "2"){
+	}elseif($_SESSION['user']['rol'] != "2" || $_SESSION['user']['admin'] != "1" ){
 		echo '<script> window.location="alumno" </script>';
     }
 ?>
-
 <div class="container py-4">
     <div class="row justify-content-around">
         <div class="col col-12 d-md-none">
@@ -19,7 +18,7 @@
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
                         <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group">
+                            <div class="input-group ">
                                 <span class="input-group-prepend">
                                     <div class="input-group-text bg-transparent border border-dark border-right-0">
                                         <i class="fas fa-search"></i>
@@ -38,33 +37,30 @@
                                     <tr>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
-                                        <th scope="col">Carrera</th>
-                                        <th scope="col">N° de Control</th>
-                                        <th scope="col">Semestre</th>
-                                        <th scope="col">Materia</th>
+                                        <th scope="col">Área</th>
+                                        <th scope="col">RFC</th>
+                                        <th scope="col">Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Eduardo</td>
-                                        <td>Martinez</td>
-                                        <td>Industrial</td>
-                                        <td>l162080010</td>
-                                        <td>5</td>
-                                        <td>Programacion</td>
+                                        <td>Camilo</td>
+                                        <td>Séptimo</td>
+                                        <td>Cálculo</td>
+                                        <td>CCP6908</td>
+                                        <td><span class="btn btn-success borde-button mr-2"></span>Online</td>
                                     </tr>
                                     <tr>
-                                        <td>Jorge</td>
-                                        <td>Villa</td>
-                                        <td>Sistemas</td>
-                                        <td>l172080018</td>
-                                        <td>7</td>
-                                        <td>Bases de Datos</td>
+                                        <td>Alberto</td>
+                                        <td>García</td>
+                                        <td>Gestión</td>
+                                        <td>DFJ6705</td>
+                                        <td><span class="btn btn-danger borde-button mr-2"></span>Offline</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="docente" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
+                                <a href="admin" class="btn btn-blue-card text-white"><b>Volver al Panel de Control</b></a>
                             </div>
                         </div>
                     </div>             
