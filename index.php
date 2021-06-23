@@ -93,6 +93,7 @@
         }else{
             require_once 'view/login/login.php';
         }
+        require_once 'view/modalImagen.php';
     ?>
 </body>
 </html>
