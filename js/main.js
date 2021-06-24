@@ -1,3 +1,11 @@
+window.onload = () => {
+    var carga = document.getElementById('contenedor');
+
+    carga.style.visibility = 'hidden';
+    carga.style.opacity = '0';
+}
+
+
 $(document).ready(function(){
 
 	var altura= $('.menu').offset().top;

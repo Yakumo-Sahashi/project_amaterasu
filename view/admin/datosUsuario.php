@@ -9,7 +9,7 @@
                 <p class=""><b>Nombre: </b></p>
                 <p class=""><b>Apellidos: </b></p>
                 <p class=""><b>Carrera: </b></p>
-                <p class=""><b>Email: </b></p>
+                <p class=""><b>Email:</b></p>
                 <p class=""><b>RFC: </b></p>
                 <hr>
                 <a href="docente" class="btn btn-light btn-block">Panel Docente</a>

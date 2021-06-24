@@ -12,6 +12,7 @@
 <body>
     <?php 
         session_start();
+        require_once 'view/loader.php';
         require_once 'view/nav.php';
         
         if(isset($_GET['view'])){
