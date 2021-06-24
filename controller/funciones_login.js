@@ -36,7 +36,7 @@ $(document).ready(() => {
       success: (r)=>{
         if(r==="2"){
           setTimeout(() => {
-            //ending();
+            //loader.ending();
             window.location = "home";
           }, 2000);
         }else{
