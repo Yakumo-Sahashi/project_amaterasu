@@ -36,7 +36,7 @@
                                                 <div class="col-md-3">
                                                     <select class="form-control mb-1" name="materia" id="materia">
                                                         <option value="">Elegir materia</option>
-                                                        <option value="">materia1</option>
+                                                        <option value="programacion">materia1</option>
                                                         <option value="">materia2</option>
                                                         <option value="">materia3</option>
                                                         <option value="">materia4</option>
@@ -46,7 +46,7 @@
                                                 <div class="col-md-3">
                                                     <select class="form-control mb-1" name="semestre" id="semestre">
                                                         <option value="">Semestre</option>
-                                                        <option value="">Ene - Jun 2021</option>
+                                                        <option value="2021">Ene - Jun 2021</option>
                                                         <option value="">Ago - dic 2021</option>
                                                         <option value="">Ene - Jun 2020</option>
                                                     </select>
@@ -180,7 +180,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form id="subirArchivo">
+                <form action="model/cargarArchivos.php" method="post" enctype="multipart/form-data" id="subirArchivo">
 					<div class="row justify-content-around">
                         <div class="col-md-11">
                             <p class="">
@@ -210,16 +210,19 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-folder-open"></i></span>
 								</div>
-								<input type="file" name="archivo" id="archivo" class="form-control">
+								<input type="file" class="form-control" name="archivo[]" id="archivo" multiple>	
 			        		</div>
 						</div>
+                        <div class="col-md-12">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
 					</div>	        
 				</form>
 			</div>
-			<div class="modal-footer">
-                <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
-		        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-		    </div>
 		</div>
 	</div>					
 </div>
+<script src="<?=SERVIDOR?>controller/funciones_subir_archivos.js" type="module"></script>
