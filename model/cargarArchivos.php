@@ -10,7 +10,7 @@
 	$vacio=0;
 
 	$tipoArchivo = $_POST['tipo'];
-	$carpeta ="".$_SESSION['user']['email'];
+	$carpeta = $_SESSION['user']['email'];
 
 	foreach($_FILES["archivo"]['tmp_name'] as $key => $tmp_name){ //extraemos los archivos subidos uno a uno
 		
