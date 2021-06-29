@@ -54,7 +54,7 @@
                                                     <button class="btn btn-panel btn-block mb-1" data-toggle="modal" id="btnModal" data-target="#subirArchivos" disabled>Subir archivo <i class="fas fa-upload"></i></button>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <a href="files/generarZip.php" target="_blank" class="btn btn-panel btn-block mb-1" type="button">Descargar <i class="fas fa-download"></i></a>
+                                                    <button class="btn btn-panel btn-block mb-1" type="button" id="btnZip" disabled>Descargar <i class="fas fa-download"></i></button>
                                                 </div>
                                                 </div>
                                             </div>
@@ -122,9 +122,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-around">
+                            <div class="row justify-content-center">
                                 <div class="col-md-4 mt-4 mb-4">
                                     <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
+                                </div>
+                                <div class="col-md-4 mt-4 mb-4">
+                                    <a class="btn btn-blue btn-block" href="grafica">Grafica de archivos</a>
                                 </div>
                             </div>
                         </div>
@@ -196,3 +199,4 @@
 </div>
 <script src="<?=SERVIDOR?>controller/funciones_subir_archivos.js" type="module"></script>
 <script src="<?=SERVIDOR?>controller/funciones_eliminar_archivo.js"></script>
+<script src="<?=SERVIDOR?>controller/funciones_crear_zip.js" type="module"></script>

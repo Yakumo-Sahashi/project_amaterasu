@@ -17,10 +17,12 @@
     $totales = array();
 
     $zip = new ZipArchive();
+
+    $nombreZip = $semestre."-".$_SESSION['user']['email'];
     
-    $zip->open($semestre,ZipArchive::CREATE);
+    $zip->open($nombreZip,ZipArchive::CREATE);
     
-    $dir = 'miSemestre'.$semestre;
+    $dir = 'Semestre '.$semestre;
     $zip->addEmptyDir($dir);
 
 
@@ -36,7 +38,7 @@
                 while ($archivo = readdir($directorio)){ //Devuelve el nombre de la entrada al directorio
                     if (!is_dir($archivo)){//Indica si el nombre del archivo es un directorio
                         $validacionTipo= strtolower(pathinfo($archivo, PATHINFO_EXTENSION));//validamos el tipo de archivo
-                        $dir = 'miSemestre'.$semestre."/".$mate['nombreMateria']."/".$tipoArchivo[$i];
+                        $dir = 'Semestre '.$semestre."/".$mate['nombreMateria']."/".$tipoArchivo[$i];
                         $zip->addEmptyDir($dir);
                         if ($validacionTipo== $tipoArchivo[$i]) {
                             $zip->addFile($path.'/'.$archivo,$dir."/".$archivo);                                        
@@ -48,7 +50,16 @@
     }
 
     $zip->close();
-    //unlink($semestre.'.zip');
+    echo ","."files/".$nombreZip;
+    //header("location:".SERVIDOR."files/".$nombreZip);
+    /* header("Content-type: application/octet-stream");
+    header("Content-disposition: attachment; filename=".$semestre);
+    // leemos el archivo creado
+    readfile($semestre);
+    unlink(SERVIDOR."files/".$semestre); */
+
+
+   
 
     function comprobarSemestre($conexion){
 

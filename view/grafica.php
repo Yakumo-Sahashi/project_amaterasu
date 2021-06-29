@@ -45,4 +45,4 @@
         </div>
     </div>
 </div>
-<script src="<?=SERVIDOR?>controller/grafica.js"></script>
+<script src="<?=SERVIDOR?>controller/funciones_grafica.js"></script>

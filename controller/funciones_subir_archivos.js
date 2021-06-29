@@ -69,7 +69,7 @@ $(document).ready(() => {
                     mostrarDatos(tipo,semestre,materia);
                     swal("Perfecto", "Se han subido los archivos con exito!", "success");
                 } else {
-                    $('#subirArchivo')[0].reset();
+                    //$('#subirArchivo')[0].reset();
                     loader.ending();
                     mostrarDatos(tipo,semestre,materia);
                     swal("Upps", "Error al intentar subir archivo(s)! \n" + r, "error");
@@ -109,6 +109,11 @@ $(document).ready(() => {
     $('#semestre').change(function() {
         semestre = $(this).val();
         $('#btnModal').prop('disabled', true);
+        if(!semestre == ""){
+            $('#btnZip').prop('disabled', false);
+        }else{
+            $('#btnZip').prop('disabled', true);
+        }
         cargarMaterias(semestre);
         mostrarDatos(actual,semestre,materia);
     });
