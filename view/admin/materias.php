@@ -1,19 +1,17 @@
 <?php
-/* if (!isset($_SESSION['user'])) {
+	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
-	}else{
-        if($_SESSION['user']['rol'] == "3"){
-			echo '<script> window.location="alumno" </script>';
-		}
-    } */
-
-    
-   
+	}elseif($_SESSION['user']['rol'] != "2" || $_SESSION['user']['admin'] != "1" ){
+		echo '<script> window.location="alumno" </script>';
+    }
 ?>
 <div class="container py-4">
     <div class="row justify-content-around">
-        <div class="col-md-3">
-            <?php require_once 'datosUsuario.php';?>
+        <div class="col col-12 d-md-none">
+            <?php require_once 'navResponsive.php';?>
+        </div>
+        <div class="col d-none d-md-block col-md-3">
+            <?php require 'datosUsuario.php';?>
         </div>
         <div class="col-md-9">
             <div class="card shadow card-login">
@@ -88,44 +86,46 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-8">
-                            <h5><b>Elige la materia y carrera</b></h5>
-                            <select name="" id="" class="form-control">
-                                <option value="">Quimica - Industrial</option>
-                                <option value="">Sis. Web - Sistemas</option>
-                                <option value="">Física - Gestión</option>
-                            </select>
-                            <h5 class="py-3"><b>Elige el semestre</b></h5>
-                            <select name="" id="" class="form-control">
-                                <option value="">1 - 2021</option>
-                                <option value="">2- 2021</option>
-                                <option value="">1 - 2022</option>
-                            </select>
-                            <h5 class="py-3"><b>Elige el docente</b></h5>
-                            <select name="" id="" class="form-control">
-                                <option value="">Enrique Calderas</option>
-                                <option value="">Roldán Aquino</option>
-                                <option value="">Gabriel Domínguez</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <h5><b>Horarios</b></h5>
-                            <label for="lunes">Lunes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="lunes" id="lunes">
-                            <label for="martes">Martes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="martes" id="martes">
-                            <label for="miercoles">Miercoles</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="miercoles" id="miercoles">
-                            <label for="jueves">Jueves</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="jueves" id="jueves">
-                            <label for="viernes">Viernes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="viernes" id="viernes">
-                        </div>
+                        <form action="" method="post" id="frmMateriaAnadir">
+                            <div class="col-md-8">
+                                <h5><b>Elige la materia y carrera</b></h5>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Quimica - Industrial</option>
+                                    <option value="">Sis. Web - Sistemas</option>
+                                    <option value="">Física - Gestión</option>
+                                </select>
+                                <h5 class="py-3"><b>Elige el semestre</b></h5>
+                                <select name="" id="" class="form-control">
+                                    <option value="">1 - 2021</option>
+                                    <option value="">2- 2021</option>
+                                    <option value="">1 - 2022</option>
+                                </select>
+                                <h5 class="py-3"><b>Elige el docente</b></h5>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Enrique Calderas</option>
+                                    <option value="">Roldán Aquino</option>
+                                    <option value="">Gabriel Domínguez</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <h5><b>Horarios</b></h5>
+                                    <label for="lunes">Lunes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="lunes" id="lunes">
+                                    <label for="martes">Martes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="martes" id="martes">
+                                    <label for="miercoles">Miercoles</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="miercoles" id="miercoles">
+                                    <label for="jueves">Jueves</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="jueves" id="jueves">
+                                    <label for="viernes">Viernes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="viernes" id="viernes">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-blue-card" id="btnAnadir"><b>Añadir</b></button>
+                <button type="button" class="btn btn-blue-card" id="btnAnadirMateria"><b>Añadir</b></button>
                 <button type="button" class="btn btn-red-card" data-dismiss="modal"><b>Cancelar</b></button>
             </div>
         </div>
@@ -167,16 +167,18 @@
                         </div>
                         <div class="col-md-4">
                             <h5><b>Horarios</b></h5>
-                            <label for="lunes">Lunes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="lunes" id="lunes">
-                            <label for="martes">Martes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="martes" id="martes">
-                            <label for="miercoles">Miercoles</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="miercoles" id="miercoles">
-                            <label for="jueves">Jueves</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="jueves" id="jueves">
-                            <label for="viernes">Viernes</label>
-                            <input type="text" placeholder="--:--" class="form-control form-control-sm" name="viernes" id="viernes">
+                            <form action="" method="post" id="frmHorarios">
+                                <label for="lunes">Lunes</label>
+                                <input type="text" placeholder="--:--" class="form-control form-control-sm" name="lunes" id="lunes">
+                                <label for="martes">Martes</label>
+                                <input type="text" placeholder="--:--" class="form-control form-control-sm" name="martes" id="martes">
+                                <label for="miercoles">Miercoles</label>
+                                <input type="text" placeholder="--:--" class="form-control form-control-sm" name="miercoles" id="miercoles">
+                                <label for="jueves">Jueves</label>
+                                <input type="text" placeholder="--:--" class="form-control form-control-sm" name="jueves" id="jueves">
+                                <label for="viernes">Viernes</label>
+                                <input type="text" placeholder="--:--" class="form-control form-control-sm" name="viernes" id="viernes">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -189,3 +191,4 @@
     </div>
 </div>
 
+<script src="<?=SERVIDOR?>controller/funcionesMaterias.js"></script>

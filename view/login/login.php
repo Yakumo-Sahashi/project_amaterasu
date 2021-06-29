@@ -1,11 +1,6 @@
 <?php
 	if (isset($_SESSION['user'])) {
         echo '<script> window.location="home" </script>';
-		/* if($_SESSION['user']['rol'] == "2"){
-			echo '<script> window.location="docente" </script>';
-		}else{
-			echo '<script> window.location="alumno" </script>';
-		} */
 	}
 ?>
 <div class="container py-4">
@@ -41,3 +36,4 @@
         </div>
     </div>
 </div>
+<script src="<?=SERVIDOR?>controller/funciones_login.js" type="module"></script>
