@@ -37,6 +37,23 @@
                     $query = "UPDATE t_usuario SET estado ='1' WHERE idUsuario ='$id'";
                     $stmt = $this->conexion->query($query);
                     if($stmt){
+                        if($resultado['datosAlumno'] == 1){
+                            $tabla = "t_docentes";
+                            $id = $resultado['datosDocente'];
+                            $tipo = "idDocentes";
+                        }elseif ($resultado['datosDocente'] == 1){
+                            $tabla = "t_alumnos";
+                            $id = $resultado['datosAlumno'];
+                            $tipo = "idAlumno";
+                        }
+                        $sql2 = "SELECT * FROM $tabla WHERE $tipo = ?";
+                        $consulta2 = $this->conexion->prepare($sql2);
+                        $consulta2->bind_param('s',$id);
+                        $consulta2->execute();
+                        $resultado2 = $consulta2->get_result();
+                        $resultado2 = $resultado2->fetch_assoc();
+                        $_SESSION['dataUser'] = $resultado2;
+
                         echo "2";
                     }else{
                         echo "1";

@@ -6,11 +6,11 @@
                 <a href="#" class="text-secondary" data-toggle="modal" data-target="#editarImagenModal"><i class="fas fa-edit"></i>Editar imagen</a>
                 <h3>Alumno</h3>
                 <hr>
-                <p class=""><b>Nombre: </b></p>
-                <p class=""><b>Apellidos: </b></p>
-                <p class=""><b>Carrera: </b></p>
-                <p class=""><b>Semestre: </b></p>
-                <p class=""><b>No. control: </b></p>
+                <p class=""><b>Nombre: <?=$_SESSION['dataUser']['nombreAlumno']?></b></p>
+                <p class=""><b>Apellidos: <?=$_SESSION['dataUser']['apellidoPaternoA']?> <?=$_SESSION['dataUser']['apellidoMaternoA']?></b></p>
+                <p class=""><b>Carrera: <?=$_SESSION['dataUser']['carrera']?></b></p>
+                <p class=""><b>CURP: <?=$_SESSION['dataUser']['curp']?></b></p>
+                <p class=""><b>No. control: <?=$_SESSION['dataUser']['n_Control']?></b></p>
             </div>
             <div class="col py-4 mb-4">
             </div>
