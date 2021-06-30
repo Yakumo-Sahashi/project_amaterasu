@@ -17,7 +17,9 @@
             <div class="card shadow card-login">
                 <div class="card-body">
                     <div class="row card-materias mx-1 my-1">
-                        
+                        <div class="col-md-12 mt-3 text-center align-self-center">
+                                <h2>Listado de usuarios</h2>
+                        </div>
                         <div class="col-md-12">
                             <div class="px-4 py-4 text-center">
                             <table class="table table-body border border-secondary table-hover table-responsive-xl" id="tablaUsuarios">
@@ -29,17 +31,9 @@
                                         <th scope="col">Estado</th>
                                     </tr>
                                 </thead>
-                                <!-- <tbody>
-                                    <tr>
-                                        <td>Camilo</td>
-                                        <td>Séptimo</td>
-                                        <td>Cálculo</td>
-                                        <td><span class="btn btn-success borde-button mr-2"></span>Online</td>
-                                    </tr>
-                                </tbody> -->
                             </table>
                             <div class="text-center pb-4">
-                                <a href="admin" class="btn btn-blue-card text-white"><b>Volver al Panel de Control</b></a>
+                                <a href="admin" class="btn btn-blue-card text-white">Volver al Panel de Control</a>
                             </div>
                         </div>
                     </div>             

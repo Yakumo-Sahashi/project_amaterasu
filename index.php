@@ -12,6 +12,7 @@
 <body>
     <?php 
         session_start();
+        require_once 'view/loader.php';
         require_once 'view/nav.php';
         
         if(isset($_GET['view'])){
@@ -93,6 +94,7 @@
         }else{
             require_once 'view/login/login.php';
         }
+        require_once 'view/modalImagen.php';
     ?>
 </body>
 </html>
