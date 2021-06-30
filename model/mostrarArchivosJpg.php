@@ -15,9 +15,19 @@
   
   $tipoArchivo = $_POST['tipo'];
 
+  $idUss =  $_SESSION['user']['rol'] == 3 ?  $_SESSION['user']['datosAlumno'] : "";
+
   $materia = $_POST['materia'];
+
+  if($carpetaRol == "docente"){
+    $path = "files/docente/".$_SESSION['user']['datosDocente']."/".$semestre."/".$materia."/jpg";
+
+  }else{
+    $mail = emailDocente($conexion,$idUss,$semestre,$materia);
+    $path = "files/docente/".$mail."/".$semestre."/".$materia."/jpg";
+  }
   
-  $path = "files/".$carpetaRol."/".$_SESSION['user']['email']."/".$semestre."/".$materia."/jpg";
+  
 
 ?>
 <div class="row">
@@ -39,7 +49,7 @@
             <div class="boton-emergente ml-1">
               <a href="<?=SERVIDOR;?><?=$path;?>/<?=$archivo;?>" class="btn btn-descarga btn-sm" title="Descargar" download><i class="fas fa-arrow-down"></i></a>                                                                                                     
               <?php if($btnDescargar):?>
-              <button class="btn btn-eliminar btn-sm" type="button" onclick="eliminarArchivo(<?=$dis?>,'<?=$tipoArchivo?>','<?=$materia?>')" title="Eliminar"><i class="far fa-trash-alt"></i></button>           
+              <button class="btn btn-eliminar btn-sm" type="button" <?php if($carpetaRol == "alumno"){echo 'disabled';}?> onclick="eliminarArchivo(<?=$dis?>,'<?=$tipoArchivo?>','<?=$materia?>')" title="Eliminar"><i class="far fa-trash-alt"></i></button>           
               <?php endif?>
             </div>
           </form>
@@ -63,5 +73,16 @@
   
       return $resultado['semestre'];
     } 
+
+    function emailDocente($conexion,$id,$semestre,$materia){
+      $query = "SELECT * FROM t_horarioalumno th INNER JOIN t_alumnos ta ON th.idAlumno = ta.idAlumno INNER JOIN t_horarios td ON th.idHorario = td.idHorario INNER JOIN t_materias tm ON td.id_materia = tm.idMateria INNER JOIN t_semestre ts ON tm.m_semestre = ts.idSemestre  WHERE ta.idAlumno = '$id' AND tm.nombreMateria = '$materia' AND ts.semestre = '$semestre'";
+      $consulta = $conexion->prepare($query);
+      $consulta->execute();
+    
+      $resultado = $consulta->get_result();
+      $resultado = $resultado->fetch_assoc();
+  
+      return $resultado['idDocente'];
+    }
   ?>
 </div>

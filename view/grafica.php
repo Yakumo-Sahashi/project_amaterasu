@@ -6,7 +6,7 @@
         if($_SESSION['user']['rol'] == "2"){
             $direccion = "docente";
         }else{
-            $direccion = "alumno";
+            echo '<script> window.location="alumno" </script>';
         }
     }
 ?>

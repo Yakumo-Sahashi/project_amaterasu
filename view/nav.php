@@ -1,3 +1,9 @@
+<?php 
+  date_default_timezone_set('America/Mexico_City');
+  $fecha_footer = date("Y-m-d");
+  $mes_footer = date("m");
+  $year_footer = date("Y");
+?>
 <nav class="navbar navbar-expand-lg scrorev-nav-control menu" style="background-color: #1b396a;">
   <div class="container-fluid text-center">
 
@@ -18,7 +24,11 @@
       </ul>
       <ul class="navbar-nav ">
         <li class="nav-item mx-auto d-block">
-          <a href="semestre" class="btn btn-blue"><b>Ene-Jun 2021</b></a>
+          <?php if($mes_footer <= 6): ?>
+            <a href="semestre" class="btn btn-blue"><b>Enero - Junio <?=$year_footer;?></b></a>
+          <?php else:?>
+            <a href="semestre" class="btn btn-blue"><b>Agosto - Diciembre<?=$year_footer;?></p>
+          <?php endif?>
         </li>
       </ul>
       <ul class="navbar-nav">

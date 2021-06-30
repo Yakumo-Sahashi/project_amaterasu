@@ -30,7 +30,7 @@
 
         for( $i = 0 ; $i < count($tipoArchivo) ; $i++ ){
             
-            $path = $carpetaRol."/".$_SESSION['user']['email']."/".$semestre."/".$mate['nombreMateria']."/".$tipoArchivo[$i];
+            $path = "docente/".$_SESSION['user']['datosDocente']."/".$semestre."/".$mate['nombreMateria']."/".$tipoArchivo[$i];
 
             if(file_exists($path)){//revisa si el archivo existe
                 $directorio = opendir($path);//abre el directorio

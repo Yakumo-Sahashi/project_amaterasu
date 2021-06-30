@@ -36,11 +36,11 @@
                                 <div class="col-md-12">
                                     <div class="card border-0">
                                         <div class="card-body">
-                                            <div class="row">
+                                            <div class="row justify-content-around">
                                                 <div class="col-md-3">
                                                     <select class="form-control mb-1" name="semestre" id="semestre">
                                                         <option value="">Semestre</option>
-                                                        <?php foreach ($conexion->query('SELECT semestre,estado from t_semestre') as $dt):?>
+                                                        <?php foreach ($conexion->query('SELECT semestre,estado from t_semestre ORDER BY idSemestre DESC') as $dt):?>
                                                         <option value="<?=$dt['semestre']?>"><?=$dt['semestre']?></option>
                                                         <?php endforeach?>
                                                     </select>
@@ -50,13 +50,19 @@
                                                         
                                                     </select>
                                                 </div>
-                                                <div class="col-md-3">                                    
-                                                    <button class="btn btn-panel btn-block mb-1" data-toggle="modal" id="btnModal" data-target="#subirArchivos" disabled>Subir archivo <i class="fas fa-upload"></i></button>
+                                                <?php if($_SESSION['user']['rol'] == 3):?>
+                                                <div class="col-md-4 align-self-center">
+                                                    <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
+                                                </div>
+                                                <?php else:?>
+                                                <div class="col-md-3">                            
+                                                    <button class="btn btn-panel btn-block mb-1" data-toggle="modal" id="btnModal" data-target="#subirArchivos" disabled >Subir archivo <i class="fas fa-upload"></i></button>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <button class="btn btn-panel btn-block mb-1" type="button" id="btnZip" disabled>Descargar <i class="fas fa-download"></i></button>
                                                 </div>
                                                 </div>
+                                                <?php endif?>
                                             </div>
                                         </div>
                                     </div>
@@ -93,22 +99,22 @@
                                                 <div class="tab-content py-3">
                                                     <div class="tab-pane fade show active" id="word" role="tabpanel" aria-labelledby="sec1-tab">
                                                         <div class="row">
-                                                            <div class="col-md-12" id="archivosWord"></div>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosWord"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="excel" role="tabpanel" aria-labelledby="sec2-tab">
                                                         <div class="row">
-                                                            <div class="col-md-12" id="archivosExcel"></div>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosExcel"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pdf" role="tabpanel" aria-labelledby="sec3-tab">
                                                         <div class="row">
-                                                            <div class="col-md-12" id="archivosPdf"></div>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosPdf"></div>
                                                         </div>                                                
                                                     </div>
                                                     <div class="tab-pane fade" id="jpg" role="tabpanel" aria-labelledby="sec4-tab">
                                                         <div class="row">
-                                                            <div class="col-md-12" id="archivosImg"></div>
+                                                            <div class="col-md-12 "style="width:auto; height:210px; overflow: scroll;" id="archivosImg"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="mp3" role="tabpanel" aria-labelledby="sec5-tab">
@@ -123,12 +129,14 @@
                                 </div>
                             </div>
                             <div class="row justify-content-center">
+                            <?php if($_SESSION['user']['rol'] == 2):?>
                                 <div class="col-md-4 mt-4 mb-4">
                                     <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
                                 </div>
                                 <div class="col-md-4 mt-4 mb-4">
                                     <a class="btn btn-blue btn-block" href="grafica">Grafica de archivos</a>
                                 </div>
+                            <?php endif?>
                             </div>
                         </div>
                     </div>
@@ -185,7 +193,7 @@
 								<input type="file" class="form-control" name="archivo[]" id="archivo" multiple>	
 			        		</div>
 						</div>
-                        <div class="col-md-12">
+                        <div class="col-md-12">                        
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
