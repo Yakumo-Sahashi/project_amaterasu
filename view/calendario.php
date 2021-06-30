@@ -24,6 +24,9 @@
             <div class="card shadow card-login">
                 <div class="card-body">
                     <div class="row justify-content-around">
+                        <div class="col-md-4">
+                            <button class="btn btn-blue btn-block"></button>
+                        </div>
                         <div class="col-md-12">
                             <img class="img-fluid mx-auto d-block" src="img/icon_panel/calendario.png" alt="">
                         </div>
