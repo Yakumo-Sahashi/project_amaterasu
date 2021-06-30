@@ -45,25 +45,25 @@
             );
             return $datos;
         }
+        
         public function eliminarDocentes($datos){
             $conexion = Conectar :: conexion();
+            $res = 1 ;
             $sql= array(
                 "DELETE FROM t_horarios WHERE idDocente =".$datos,
-                "DELETE FROM t_docentes WHERE idDocentes =".$datos,
-                "DELETE FROM t_usuario WHERE datosDocentes =".$datos
+                "DELETE FROM t_usuario WHERE datosDocentes =".$datos,
+                "DELETE FROM t_docentes WHERE idDocentes =".$datos
                     );
-            for($i=0;$i<3;$i++){
-                $respuesta =$conexion->query($sql[$i]);
+            for($i = 0; $i<count($sql); $i++){
+                $respuesta =$conexion->prepare($sql[$i]);
                 
-                if(!$respuesta){
-                    $respuesta = 2;
+                if(!$respuesta->execute()){
+                    $res++;
                     break;
-                }else{
-                    $respuesta = 1;
                 }
             }
             $conexion->close();
-            return $respuesta;
+            return $datos;
         }
     }
 ?>

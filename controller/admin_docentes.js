@@ -115,7 +115,7 @@ function eliminarDocente(idDocente){
 		swal("No tienes id de docente");
 		return false;
 	}else{
-		idDocente = parseInt(idDocente);
+		//idDocente = parseInt(idDocente);
 		swal({
 			title: 'Estas seguro que quieres eliminar el docente',
 			text: "No se podra recuperar el docente",
@@ -127,17 +127,18 @@ function eliminarDocente(idDocente){
 				$.ajax({
 					type:"POST",
 					data:"idDocente=" + idDocente,
-					url:"model/procesos/admin/eliminardocentes.php",
+					url:"model/eliminarDocenteAdmin.php",
 					success:function(r){
-					  r = r.trim();
 					  console.log(r);
 					  if(r==1){
+						tabla.ajax.reload(null,false);
 						swal(
 						'Eliminado!',
 						'Eliminado con exito',
 						'success'
 						)
 					  }else{
+						tabla.ajax.reload(null,false);
 						swal("D:","Fallo al eliminar","error");
 					  }
 					}
