@@ -19,67 +19,33 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group ">
-                                <span class="input-group-prepend">
-                                    <div class="input-group-text bg-transparent border border-dark border-right-0">
-                                        <i class="fas fa-search"></i>
-                                    </div>
-                                </span>
-                                <input class="form-control py-2 border border-dark border-left-0 border" type="search" />
-                            </div>
+                    <div class="row card-materias mt-3">
+                        <div class="col-md-7 align-self-center text-center">
+                            <h2>Listado de docentes</h2>
                         </div>
-                        <div class="col-md-3 mt-3">
-                            <span class="btn btn-blue-card btn-block"><b>Buscar</b></span>
-                        </div>
-                        <div class="col-md-3 mt-3">
-                            <span class="btn btn-blue-card btn-block" data-toggle="modal" data-target="#añadirModal"><b>Añadir</b></span>
+                        <div class="col-md-5">
+                            <span class="btn btn-blue btn-block" data-toggle="modal" data-target="#añadirModal"><b>Añadir</b></span>
+                            <a href="admin" class="btn btn-blue btn-block"><b>Volver al Panel de Control</b></a>
                         </div>
                         <div class="col-md-12">
-                            <div class="px-4 py-4 text-center">
-                            <table class="table table-body scroll-tables border border-secondary table-hover table-responsive-xl">
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text-center">
+                            <table class="table table-body scroll-tables border border-secondary table-hover table-responsive-xl" id="tablaDocentes">
                                 <thead class="table-head ">
-                                    <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellido</th>
-                                        <th scope="col">Area</th>
-                                        <th scope="col">RFC</th>
-                                        <th scope="col">Actualizar</th>
-                                        <th scope="col">Eliminar</th>
+                                    <tr>    
+                                        <th>RFC</th>
+                                        <th>Area</th>
+                                        <th>Nombre</>
+                                        <th>Ap. Paterno</th>
+                                        <th>Ap. Materno</th>
+                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
-                                <div id="tablasDocentes">
-                                    <tbody>
-                                        <?php
-                                            $sql = "SELECT idDocentes, nombreDocente, apellidoPaternoP, areaProfesor,rfc FROM t_docentes";
-                                            $resultado = mysqli_query($conexion,$sql);
-                                            while($mostrar = mysqli_fetch_array($resultado)){
-                                                if($mostrar['idDocentes'] !=1 && $mostrar['idDocentes'] > 1){
-                                                    $idDocentes = $mostrar['idDocentes'];
-                                        ?>
-                                                <tr>
-                                                    <td><?php echo $mostrar['nombreDocente'];?></td>
-                                                    <td><?php echo $mostrar['apellidoPaternoP'];?></td>
-                                                    <td><?php echo $mostrar['areaProfesor'];?></td>
-                                                    <td><?php echo $mostrar['rfc'];?></td>
-                                                    <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#actualizarModal" 
-                                                            onclick="obtenerDocentes('<?php echo $idDocentes;?>')">
-                                                    <i class="fas fa-edit"></i>
-                                                    </span></td>
-                                                    <td><span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" onclick="eliminarDocente('<?php echo $idDocentes;?>')">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                    </span></td>
-                                                </tr>
-                                        <?php
-                                                }
-                                            }
-                                        ?>
-                                    </tbody>
-                                </div>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="admin" class="btn btn-blue-card text-white"><b>Volver al Panel de Control</b></a>
+                                
                             </div>
                         </div>
                     </div>             
