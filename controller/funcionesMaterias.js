@@ -1,24 +1,26 @@
-$(document).ready(function (){
+$(document).ready(function () {
     var obj;
-    var carrera;
-    var idMateria;
-    var semestre;
-    var idDocentes;
-    var datos;
-    function mostrarTabla(){
+    var aula;
+    var carrera, horaInicio, horaFin;
+    var materia, docente;
+    var lunes, martes, miercoles, jueves, viernes;
+
+
+    function mostrarTabla() {
         $('#tablaMaterias').DataTable({
             language: {
                 url: "http://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
             },
-            ajax:'./model/mostrarMaterias.php',
+            ajax: './model/mostrarMaterias.php',
             columns: [
-                {data: "nombreMateria"},
-                {data: "nombreDocente"},
-                {data: "carrera"},
-                {data: "semestre"},
-                {data: "aula"},
-                {data: "editar",
-                    render: function(data, type, row){
+                { data: "nombreMateria" },
+                { data: "nombreDocente" },
+                { data: "carrera" },
+                { data: "semestre" },
+                { data: "aula" },
+                {
+                    data: "editar",
+                    render: function (data, type, row) {
                         return '<span class="btn btn-warning btn-sm text-white borde-button" data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span>'
                     }
                 }
@@ -29,33 +31,33 @@ $(document).ready(function (){
 
     };
 
-    function selectCarreraAnadir(){
-        $('#selectCarreraAnadir').bind('change', function(){
+    function selectCarreraAnadir() {
+        $('#selectCarreraAnadir').bind('change', function () {
             carrera = $('#selectCarreraAnadir').val();
-            if(carrera == ""){
+            if (carrera == "") {
                 swal({
                     title: "Advertencia!",
                     text: "Elige una carrera por favor",
                     icon: "warning"
                 });
                 $('#selectMateriaAnadir').val('');
-                $('#selectMateriaAnadir').attr("disabled","");
+                $('#selectMateriaAnadir').attr("disabled", "");
                 return false;
-                
-            }else{
+
+            } else {
                 console.log(carrera);
                 $('#selectMateriaAnadir').removeAttr("disabled");
-                
+
                 $.ajax({
                     type: "POST",
                     data: "carrera=" + carrera,
                     url: "./model/selectMaterias.php",
-                    success: (r)=>{
+                    success: (r) => {
                         obj = JSON.parse(r);
                         console.log(obj);
                         for (i = 0; i < obj.data.length; i++) {
-                    
-                            $('<option value="'+ obj.data[i].idMateria + '">' + obj.data[i].nombreMateria + '</option>').appendTo('#selectMateriaAnadir');
+
+                            $('<option value="' + obj.data[i].idMateria + '">' + obj.data[i].nombreMateria + '</option>').appendTo('#selectMateriaAnadir');
                         }
                     }
                 });
@@ -64,142 +66,197 @@ $(document).ready(function (){
             $('<option value="">Selecciona una materia</option>').appendTo('#selectMateriaAnadir');
             return false;
         });
-        
+
     };
 
-    
-    function selectSemestreAnadir(){
-        $('#selectMateriaAnadir').bind('change', function(){
-            idMateria = $('#selectMateriaAnadir').val();
-            if(idMateria == ""){
-                swal({
-                    title: "Advertencia!",
-                    text: "Elige una materia por favor",
-                    icon: "warning"
-                });
-                $('#selectSemestreAnadir').val('');
-                $('#selectSemestreAnadir').attr("disabled","");
-                return false;
-                
-            }else{
-                $('#selectSemestreAnadir').removeAttr("disabled");
 
-                $.ajax({
-                    type: "POST",
-                    url: "./model/selectSemestreMaterias.php",
-                    success: (r)=>{
-                        obj = JSON.parse(r);
-                        $('<option value="">' + obj.data[0].semestre + '</option>').appendTo('#selectSemestreAnadir');    
-                    }
-                });
-            };
-            $('#selectSemestreAnadir').empty();
-            $('<option value="">Selecciona un semestre</option>').appendTo('#selectSemestreAnadir');
-            return false;
+    function selectSemestreAnadir() {
+        $.ajax({
+            type: "POST",
+            url: "./model/selectSemestreMaterias.php",
+            success: (r) => {
+                obj = JSON.parse(r);
+
+                $('<option value="' + obj.data[0].idSemestre + '">' + obj.data[0].semestre + '</option>').appendTo('#selectSemestreAnadir');
+            }
         });
-       
+        return false;
     };
-    
 
 
-    function selectDocenteAnadir(){
-        $('#selectDocenteAnadir').bind('change', function(){
-            semestre = $('#selectDocenteAnadir').val();
-            if(semestre == ""){
-                swal({
-                    title: "Advertencia!",
-                    text: "Elige una materia por favor",
-                    icon: "warning"
-                });
-                $('#selectDocenteAnadir').val('');
-                $('#selectDocenteAnadir').attr("disabled","");
-                return false;
-                
-            }else{
-                $('#selectDocenteAnadir').removeAttr("disabled");
 
-                $.ajax({
-                    type: "POST",
-                    url: "./model/selectDocenteMaterias.php",
-                    success: (r)=>{
-                        obj = JSON.parse(r);
-                        for (i = 0; i < obj.data.length; i++) {
-                            
-                            $('<option value="' + obj.data[i].idDocentes + '">' + obj.data[i].nombreDocente + " " + obj.data[i].apellidoPaternoP + " " + obj.data[i].apellidoMaternoP + '</option>').appendTo('#selectDocenteAnadir');
-                        }
-                        
-                    }
-                });
-            };
-            $('#selectDocenteAnadir').empty();
-            $('<option value="">Selecciona el docente</option>').appendTo('#selectDocenteAnadir');
-            return false;
+    function selectDocenteAnadir() {
+        $.ajax({
+            type: "POST",
+            url: "./model/selectDocenteMaterias.php",
+            success: (r) => {
+                obj = JSON.parse(r);
+                for (i = 0; i < obj.data.length; i++) {
+
+                    $('<option value="' + obj.data[i].idDocentes + '">' + obj.data[i].nombreDocente + " " + obj.data[i].apellidoPaternoP + " " + obj.data[i].apellidoMaternoP + '</option>').appendTo('#selectDocenteAnadir');
+                }
+
+            }
         });
-        
+        return false;
+    };
+
+    function activarSelectHorarios() {
+        $('#lunesInicio').bind('change', function () {
+            $('#lunesFin').removeAttr("disabled");
+            var inicio = $('#lunesInicio').val();
+            selectHorarios(inicio, "lunesFin");
+        });
+
+        $('#martesInicio').bind('change', function () {
+            $('#martesFin').removeAttr("disabled");
+            var inicio = $('#martesInicio').val();
+            selectHorarios(inicio, "martesFin");
+        });
+
+        $('#miercolesInicio').bind('change', function () {
+            $('#miercolesFin').removeAttr("disabled");
+            var inicio = $('#miercolesInicio').val();
+            selectHorarios(inicio, "miercolesFin");
+        });
+
+        $('#juevesInicio').bind('change', function () {
+            $('#juevesFin').removeAttr("disabled");
+            var inicio = $('#juevesInicio').val();
+            selectHorarios(inicio, "juevesFin");
+        });
+
+        $('#viernesInicio').bind('change', function () {
+            $('#viernesFin').removeAttr("disabled");
+            var inicio = $('#viernesInicio').val();
+            selectHorarios(inicio, "viernesFin");
+        });
     };
 
 
+    function selectHorarios(inicio, id){
+        inicio = parseInt(inicio) + 1;
+        var options ='';
+        for(var i = inicio; i < 20; i++){
+            
+           if(i < 10){
+                options = options + '<option value="0'+ i + ':00">0' + i + ':00</option>';
+           } else {
+                options = options + '<option value="'+ i + ':00">' + i + ':00</option>';
+           }
+        } $('#'+ id).html(options);
+        if(options == 0){
+            $('#'+ id).prop("disabled", "true");
+        }
+    }
 
-    function anadirMateria(){
-        if($('#selectCarreraAnadir').val() == "" && $('#selectMateriaAnadir').val() == "" && $('#selectSemestreAnadir').val() == "" && $('#selectDocenteAnadir').val() == "" && $('#selectAulaAnadir').val() == ""){
+    function anadirMateria() {
+        aula = $('#selectAulaAnadir').val();
+        lunes = $('#lunesInicio').val() + "-" + $('#lunesFin').val();
+        martes = $('#martesInicio').val() + "-" + $('#martesFin').val();
+        miercoles = $('#miercolesInicio').val() + "-" + $('#miercolesFin').val();
+        jueves = $('#juevesInicio').val() + "-" + $('#juevesFin').val();
+        viernes = $('#viernesInicio').val() + "-" + $('#viernesFin').val();
+        materia = $('#selectMateriaAnadir').val();
+        docente = $('#selectDocenteAnadir').val();
+        if ($('#selectCarreraAnadir').val() == "" && $('#selectMateriaAnadir').val() == "" && $('#selectSemestreAnadir').val() == "" && $('#selectDocenteAnadir').val() == "" && $('#selectAulaAnadir').val() == "") {
             swal({
                 title: "Advertencia!",
                 text: "No puedes dejar todos los campos vacios",
                 icon: "warning"
             });
-        }else{
-            if($('#lunes').val() == "" && $('#martes').val() == "" && $('#miercoles').val() == "" && $('#jueves').val() == "" && $('#viernes').val() == ""){
+            return false;
+        } else {
+            if ($('#selectMateriaAnadir').val() == "") {
+                swal({
+                    title: "Advertencia!",
+                    text: "Elige una materia por favor",
+                    icon: "warning"
+                });
+                return false;
+            } else if ($('#selectSemestreAnadir').val() == "") {
+                swal({
+                    title: "Advertencia!",
+                    text: "Elige un semestre por favor",
+                    icon: "warning"
+                });
+                return false;
+            } else if ($('#selectDocenteAnadir').val() == "") {
+                swal({
+                    title: "Advertencia!",
+                    text: "Elige un docente por favor",
+                    icon: "warning"
+                });
+                return false;
+            } else if ($('#selectAulaAnadir').val() == "") {
+                swal({
+                    title: "Advertencia!",
+                    text: "Elige un aula por favor",
+                    icon: "warning"
+                });
+                return false;
+            } else if ($('#lunesInicio').val() == "00:00" && $('#martesInicio').val() == "00:00" && $('#miercolesInicio').val() == "00:00" && $('#juevesInicio').val() == "00:00" && $('#viernesInicio').val() == "00:00") {
                 swal({
                     title: "Advertencia!",
                     text: "No puedes dejar todos los horarios vacios",
                     icon: "warning"
                 });
                 return false;
-            }else {
-                console.log(idMateria);
-                idDocentes = $('#selectDocenteAnadir').val();
-                console.log(idDocentes);
-                datos = $('#frmAsignarHorario').serialize();
-                console.log(datos);
+            }  else {
+
+
+
                 $.ajax({
                     type: 'POST',
-                    data: $('#frmAsignarHorario').serialize(),
+                    data: {
+                        aula: aula,
+                        lunes: lunes,
+                        martes: martes,
+                        miercoles: miercoles,
+                        jueves: jueves,
+                        viernes: viernes,
+                        id_materia: materia,
+                        idDocente: docente
+                    },
                     url: './model/anadirMateria.php',
-                    success: (r)=>{
+                    success: (r) => {
                         console.log(r);
-                        if(r == ""){
+                        if (r == "") {
                             swal({
                                 title: "Error",
                                 text: "Hubo un error al insertar los datos!",
                                 icon: "error"
                             });
-                        }else{
+                        } else {
                             swal({
                                 title: "Exito",
                                 text: "Los datos se guardaron correctamente",
                                 icon: "success"
                             });
                             $('#tablaMaterias').DataTable().ajax.reload();
-                        }
-                        
+                            $('#frmAsignarHorario').trigger("reset");
+                            $('#selectMateriaAnadir').attr("disabled", "");
+                        };
+
                     }
                 });
+
                 return false;
             }
         }
 
-        
+
     };
 
-    function editarMateria(){
-        if($('#lunes').val() == "" && $('#martes').val() == "" && $('#miercoles').val() == "" && $('#jueves').val() == "" && $('#viernes').val() == ""){
+    function editarMateria() {
+        if ($('#lunes').val() == "" && $('#martes').val() == "" && $('#miercoles').val() == "" && $('#jueves').val() == "" && $('#viernes').val() == "") {
             swal({
                 title: "Advertencia!",
                 text: "No puedes dejar todos los horarios vacios",
                 icon: "warning"
             });
             return false;
-        }else {
+        } else {
 
         }
     };
@@ -212,12 +269,16 @@ $(document).ready(function (){
 
     selectDocenteAnadir();
 
+    activarSelectHorarios();
 
-    $('#btnAnadirMateria').click(()=>{
+    validarHorario();
+
+    $('#btnAnadirMateria').click(() => {
         anadirMateria();
+        
     });
 
-    $('#btnEditarMateria').click(()=>{
+    $('#btnEditarMateria').click(() => {
         editarMateria();
     })
 });

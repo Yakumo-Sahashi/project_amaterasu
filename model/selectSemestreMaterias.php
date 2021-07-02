@@ -7,7 +7,7 @@
     
     $conexion = $obj->conexion();
 
-    $sql = "SELECT t_semestre.semestre FROM t_semestre WHERE t_semestre.estado = 'activo'";
+    $sql = "SELECT t_semestre.idSemestre, t_semestre.semestre FROM t_semestre WHERE t_semestre.estado = 'activo'";
 
     $consulta = $conexion->prepare($sql);
 
