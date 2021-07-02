@@ -1,8 +1,8 @@
 <?php 
   date_default_timezone_set('America/Mexico_City');
   $fecha_footer = date("Y-m-d");
-  $mes_footer = date("m");
-  $year_footer = date("Y");
+  $mes = date("m");
+  $year = date("Y");
 ?>
 <nav class="navbar navbar-expand-lg scrorev-nav-control menu" style="background-color: #1b396a;">
   <div class="container-fluid text-center">
@@ -24,13 +24,13 @@
       </ul>
       <ul class="navbar-nav ">
         <li class="nav-item mx-auto d-block">
-          <?php if($mes_footer <= 6): ?>
-            <a href="semestre" class="btn btn-blue"><b>Enero - Junio <?=$year_footer;?></b></a>
+          <?php if($mes <= 7): ?>
+            <a href="semestre" class="btn btn-blue"><b>Enero -Junio <?=$year?></b></a>
           <?php else:?>
-            <a href="semestre" class="btn btn-blue"><b>Agosto - Diciembre<?=$year_footer;?></p>
+            <a href="semestre" class="btn btn-blue"><b>Agosto - Diciembre <?=$year?></b></a>
           <?php endif?>
         </li>
-      </ul>
+      </ul>      
       <ul class="navbar-nav">
       <?php if (!empty($_SESSION['user']['email'])):?>
         <li class="nav-item dropdown">

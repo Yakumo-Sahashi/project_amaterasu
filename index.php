@@ -73,6 +73,9 @@
                     case 'login': 
                         require_once 'view/login/login.php';
                         break; 
+                    case 'recuperar': 
+                        require_once 'view/login/recuperacion.php';
+                        break; 
                     case 'semestre': 
                         require_once 'view/calendario.php';
                         break;

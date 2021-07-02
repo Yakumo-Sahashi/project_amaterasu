@@ -10,7 +10,7 @@
 
     while($datos = $resultado->fetch_assoc()){
         if($datos['idAlumno']!=1){
-            $datos['btnEditar']='<span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarAlumnoModal" onclick="precargarAlumno('.$datos['idAlumno'].');" title="editar"><i class="fas fa-edit"></i></span> <span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarAlumnoModal"  onclick="eliminarAlumno('.$datos['idAlumno'].');" title="editar"><i class="fas fa-trash"></i></span>';
+            $datos['btnEditar']='<span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarAlumnoModal" onclick="precargarAlumno('.$datos['idAlumno'].');" title="editar"><i class="fas fa-edit"></i></span> <span class="btn btn-danger btn-sm text-white borde-button"  onclick="eliminarAlumno('.$datos['idAlumno'].');" title="editar"><i class="fas fa-trash"></i></span>';
             //$datos['btnEliminar']='<span class="btn btn-danger btn-sm text-white borde-button"  data-toggle="modal" data-target="#eliminarAlumnoModal"  onclick="eliminarAlumno('.$datos['idAlumno'].');" title="editar"><i class="fas fa-trash"></i></span>';
             $cont_dt['data'][]=$datos;
         }

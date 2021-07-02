@@ -2,7 +2,7 @@ import Loader from './funciones_loader.js';
 const loader = new Loader();
 const nombre = /[a-zA-Z]+/;
 const expresionEmail = /\w+@\w+\.+[a-z]/;
-const tel = /[0-9]/;
+const tel = /[0-9]{10}/;
 const expresionCURP = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/;
 
 $(document).ready(() => {   
@@ -42,6 +42,7 @@ $(document).ready(() => {
                 loader.ending();
                 if (r == "2") {
                     tabla.ajax.reload(null,false);
+                    $('#frmAgregarAlumno')[0].reset();
                     swal({
                         title: "Correcto!",
                         text: "Se ha agregado al alumno con exito!",
@@ -104,9 +105,12 @@ $(document).ready(() => {
         }else if(!nombre.test($('#edtMaterno').val())){
             alerta("El campo Apellido materno debe contener solo letras!");
             return false;
-        }else if(!tel.test($('#edtTelefono').val()) && !(telefono.length == 10)){
-            alerta("El campo Telefono debe contener solo 10 numeros!");
+        }else if(!tel.test($('#edtTelefono').val())){
+            alerta("El campo Telefono debe contener solo numeros!");
             return false;
+        }else if(telefono.length != 10){
+            alerta("El campo Telefono debe contener solo 10 numeros!");
+            return false;                
         }else if(!expresionEmail.test($('#edtEmail').val())){
             alerta("Estructura de email no valida!\n\nejemplo: correo@gmail.com");
             return false;
@@ -129,9 +133,12 @@ $(document).ready(() => {
         }else if(!nombre.test($('#materno').val())){
             alerta("El campo Apellido materno debe contener solo letras!");
             return false;
-        }else if(!tel.test($('#telefono').val()) && !(telefono.length == 10)){
+        }else if(!tel.test($('#telefono').val())){
             alerta("El campo Telefono debe contener solo 10 numeros!");
             return false;
+        }else if(telefono.length != 10){
+            alerta("El campo Telefono debe contener solo 10 numeros!");
+            return false;                
         }else if(!expresionEmail.test($('#email').val())){
             alerta("Estructura de email no valida!\n\nejemplo: correo@gmail.com");
             return false;

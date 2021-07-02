@@ -41,9 +41,10 @@ $(document).ready(() => {
                 loader.ending();
                 if (r == "2") {
                     tabla.ajax.reload(null,false);
+                    $('#frmAgregarDocente')[0].reset();
                     swal({
                         title: "Correcto!",
-                        text: "Se ha agregado al alumno con exito!",
+                        text: "Se ha agregado al docente con exito!",
                         icon: "success"  
                         });
                 } else {
@@ -102,9 +103,12 @@ $(document).ready(() => {
         }else if(!nombre.test($('#edtMaterno').val())){
             alerta("El campo Apellido materno debe contener solo letras!");
             return false;
-        }else if(!tel.test($('#edtTelefono').val()) && !(telefono.length == 10)){
-            alerta("El campo Telefono debe contener solo 10 numeros!");
+        }else if(!tel.test($('#edtTelefono').val())){
+            alerta("El campo Telefono debe contener solo numeros!");
             return false;
+        }else if(telefono.length != 10){
+            alerta("El campo Telefono debe contener solo 10 numeros!");
+            return false;                
         }else if(!expresionEmail.test($('#edtEmail').val())){
             alerta("Estructura de email no valida!\n\nejemplo: correo@gmail.com");
             return false;
@@ -130,6 +134,9 @@ $(document).ready(() => {
         }else if(!tel.test($('#telefono').val()) && !(telefono.length == 10)){
             alerta("El campo Telefono debe contener solo 10 numeros!");
             return false;
+        }else if(telefono.length != 10){
+            alerta("El campo Telefono debe contener solo 10 numeros!");
+            return false;                
         }else if(!expresionEmail.test($('#email').val())){
             alerta("Estructura de email no valida!\n\nejemplo: correo@gmail.com");
             return false;

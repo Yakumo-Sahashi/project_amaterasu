@@ -30,7 +30,7 @@
                 $resultado = $consulta->get_result();
                 $resultado = $resultado->fetch_assoc();
         
-                if (count($resultado) > 0 && password_verify($pass, $resultado['password'])) {    
+                if ($resultado && password_verify($pass, $resultado['password'])) {    
 
                     $_SESSION['user'] = $resultado;
                     $id = $resultado['idUsuario'];

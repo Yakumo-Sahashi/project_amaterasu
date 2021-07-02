@@ -1,6 +1,4 @@
-$(document).ready(() => { 
-    graficaCarga();
-});
+graficaCarga();
 
 function graficaCarga(){
     $.ajax({
