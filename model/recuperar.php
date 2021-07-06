@@ -13,13 +13,14 @@
 
     $resultado = $consulta->get_result();
     $resultado = $resultado->fetch_assoc();
-    $password = password_hash(generarPassword(10), PASSWORD_BCRYPT);
+    $miPass = generarPassword(10);
+    $password = password_hash($miPass, PASSWORD_BCRYPT);
     if ($resultado){  
 
         $sql2 = "UPDATE t_usuario tu SET tu.password ='$password' WHERE email='$email'";
 		$consulta2 = $conexion->prepare($sql2);
 		if($consulta2->execute()){
-			echo enviarEmail($email,$password);
+			echo enviarEmail($email,$miPass);
 		}else{
 			echo '1';
 		}

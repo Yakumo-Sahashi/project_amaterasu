@@ -34,7 +34,7 @@
 
             if(file_exists($path)){//revisa si el archivo existe
                 $directorio = opendir($path);//abre el directorio
-                echo $directorio;
+                //echo $directorio;
                 while ($archivo = readdir($directorio)){ //Devuelve el nombre de la entrada al directorio
                     if (!is_dir($archivo)){//Indica si el nombre del archivo es un directorio
                         $validacionTipo= strtolower(pathinfo($archivo, PATHINFO_EXTENSION));//validamos el tipo de archivo

@@ -16,9 +16,15 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-12 mt-3 text-center align-self-center">
+                    <div class="row card-materias mt-3 justify-content-center">
+                        <div class="col-md-7 text-center align-self-center">
                                 <h2>Listado de usuarios</h2>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="admin" class="btn btn-blue btn-block">Volver al Panel de Control</a>
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
                         </div>
                         <div class="col-md-12">
                             <div class="px-4 py-4 text-center">
@@ -33,7 +39,6 @@
                                 </thead>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="admin" class="btn btn-blue-card text-white">Volver al Panel de Control</a>
                             </div>
                         </div>
                     </div>             
