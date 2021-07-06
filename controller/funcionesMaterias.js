@@ -3,7 +3,11 @@ $(document).ready(function () {
     var aula;
     var carrera, horaInicio, horaFin;
     var materia, docente;
-    var lunes, martes, miercoles, jueves, viernes;
+    var lunes = "00:00-00:00";
+    var martes = "00:00-00:00";
+    var miercoles = "00:00-00:00";
+    var jueves = "00:00-00:00";
+    var viernes = "00:00-00:00";
 
 
     function mostrarTabla() {
@@ -134,31 +138,23 @@ $(document).ready(function () {
     };
 
 
-    function selectHorarios(inicio, id){
+    function selectHorarios(inicio, id) {
         inicio = parseInt(inicio) + 1;
-        var options ='';
-        for(var i = inicio; i < 20; i++){
-            
-           if(i < 10){
-                options = options + '<option value="0'+ i + ':00">0' + i + ':00</option>';
-           } else {
-                options = options + '<option value="'+ i + ':00">' + i + ':00</option>';
-           }
-        } $('#'+ id).html(options);
-        if(options == 0){
-            $('#'+ id).prop("disabled", "true");
-        }
-    }
+        var options = '';
+        for (var i = inicio; i < 20; i++) {
 
-    function anadirMateria() {
-        aula = $('#selectAulaAnadir').val();
-        lunes = $('#lunesInicio').val() + "-" + $('#lunesFin').val();
-        martes = $('#martesInicio').val() + "-" + $('#martesFin').val();
-        miercoles = $('#miercolesInicio').val() + "-" + $('#miercolesFin').val();
-        jueves = $('#juevesInicio').val() + "-" + $('#juevesFin').val();
-        viernes = $('#viernesInicio').val() + "-" + $('#viernesFin').val();
-        materia = $('#selectMateriaAnadir').val();
-        docente = $('#selectDocenteAnadir').val();
+            if (i < 10) {
+                options = options + '<option value="0' + i + ':00">0' + i + ':00</option>';
+            } else {
+                options = options + '<option value="' + i + ':00">' + i + ':00</option>';
+            }
+        } $('#' + id).html(options);
+        if (options == 0) {
+            $('#' + id).prop("disabled", "true");
+        }
+    };
+
+    function validarDatos() {
         if ($('#selectCarreraAnadir').val() == "" && $('#selectMateriaAnadir').val() == "" && $('#selectSemestreAnadir').val() == "" && $('#selectDocenteAnadir').val() == "" && $('#selectAulaAnadir').val() == "") {
             swal({
                 title: "Advertencia!",
@@ -195,56 +191,124 @@ $(document).ready(function () {
                     icon: "warning"
                 });
                 return false;
-            } else if ($('#lunesInicio').val() == "00:00" && $('#martesInicio').val() == "00:00" && $('#miercolesInicio').val() == "00:00" && $('#juevesInicio').val() == "00:00" && $('#viernesInicio').val() == "00:00") {
+            } else if ($('#lunesInicio').val() == 0 && $('#martesInicio').val() == 0 && $('#miercolesInicio').val() == 0 && $('#juevesInicio').val() == 0 && $('#viernesInicio').val() == 0) {
                 swal({
                     title: "Advertencia!",
                     text: "No puedes dejar todos los horarios vacios",
                     icon: "warning"
                 });
                 return false;
-            }  else {
-
-
-
-                $.ajax({
-                    type: 'POST',
-                    data: {
-                        aula: aula,
-                        lunes: lunes,
-                        martes: martes,
-                        miercoles: miercoles,
-                        jueves: jueves,
-                        viernes: viernes,
-                        id_materia: materia,
-                        idDocente: docente
-                    },
-                    url: './model/anadirMateria.php',
-                    success: (r) => {
-                        console.log(r);
-                        if (r == "") {
-                            swal({
-                                title: "Error",
-                                text: "Hubo un error al insertar los datos!",
-                                icon: "error"
-                            });
-                        } else {
-                            swal({
-                                title: "Exito",
-                                text: "Los datos se guardaron correctamente",
-                                icon: "success"
-                            });
-                            $('#tablaMaterias').DataTable().ajax.reload();
-                            $('#frmAsignarHorario').trigger("reset");
-                            $('#selectMateriaAnadir').attr("disabled", "");
-                        };
-
-                    }
-                });
-
+            } else {
+                validarHorarios();
                 return false;
             }
         }
+    };
 
+    function validarHorarios(){
+        if($('#lunesInicio').val() == 0){
+            lunes = "00:00-00:00";
+        } else {
+            if($('#lunesInicio').val() < 10){
+                lunes = "0" + $('#lunesInicio').val() + ":00-" + $('#lunesFin').val();
+            } else{
+                lunes = $('#lunesInicio').val() + ":00-" + $('#lunesFin').val();
+            }
+            
+        }
+        
+        if($('#martesInicio').val() == 0){
+            martes = "00:00-00:00";
+        } else {
+            if($('#martesInicio').val() < 10){
+                martes = "0" + $('#martesInicio').val() + ":00-" + $('#martesFin').val();
+            } else{
+                martes = $('#martesInicio').val() + ":00-" + $('#martesFin').val();
+            }
+            
+        }
+
+        if($('#miercolesInicio').val() == 0){
+            miercoles = "00:00-00:00";
+        } else {
+            if($('#miercolesInicio').val() < 10){
+                miercoles = "0" + $('#miercolesInicio').val() + ":00-" + $('#miercolesFin').val();
+            } else{
+                miercoles = $('#miercolesInicio').val() + ":00-" + $('#miercolesFin').val();
+            }
+            
+        }
+
+        if($('#juevesInicio').val() == 0){
+            jueves = "00:00-00:00";
+        } else {
+            if($('#juevesInicio').val() < 10){
+                jueves = "0" + $('#juevesInicio').val() + ":00-" + $('#juevesFin').val();
+            } else{
+                jueves = $('#juevesInicio').val() + ":00-" + $('#juevesFin').val();
+            }
+            
+        }
+
+        if($('#viernesInicio').val() == 0){
+            viernes = "00:00-00:00";
+        } else {
+            if($('#viernesInicio').val() < 10){
+                viernes = "0" + $('#viernesInicio').val() + ":00-" + $('#viernesFin').val();
+            } else{
+                viernes = $('#viernesInicio').val() + ":00-" + $('#viernesFin').val();
+            }
+            
+        }
+        anadirMateria(lunes, martes, miercoles , jueves, viernes);
+    }
+
+    function anadirMateria(lunes, martes, miercoles, jueves, viernes) {
+        aula = $('#selectAulaAnadir').val();
+        lunes = lunes;
+        martes = martes;
+        miercoles = miercoles;
+        jueves = jueves;
+        viernes = viernes;
+        materia = $('#selectMateriaAnadir').val();
+        docente = $('#selectDocenteAnadir').val();
+
+
+        $.ajax({
+            type: 'POST',
+            data: {
+                aula: aula,
+                lunes: lunes,
+                martes: martes,
+                miercoles: miercoles,
+                jueves: jueves,
+                viernes: viernes,
+                id_materia: materia,
+                idDocente: docente
+            },
+            url: './model/anadirMateria.php',
+            success: (r) => {
+                console.log(r);
+                if (r == "") {
+                    swal({
+                        title: "Error",
+                        text: "Hubo un error al insertar los datos!",
+                        icon: "error"
+                    });
+                } else {
+                    swal({
+                        title: "Exito",
+                        text: "Los datos se guardaron correctamente",
+                        icon: "success"
+                    });
+                    $('#tablaMaterias').DataTable().ajax.reload();
+                    $('#frmAsignarHorario').trigger("reset");
+                    $('#selectMateriaAnadir').attr("disabled", "");
+                    selectHorarios();
+                };
+
+            }
+        });
 
     };
 
@@ -271,11 +335,12 @@ $(document).ready(function () {
 
     activarSelectHorarios();
 
-    validarHorario();
+    /* validarHorario(); */
 
     $('#btnAnadirMateria').click(() => {
-        anadirMateria();
+        validarDatos();
         
+
     });
 
     $('#btnEditarMateria').click(() => {

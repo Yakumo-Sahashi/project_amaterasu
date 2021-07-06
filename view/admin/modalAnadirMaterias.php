@@ -67,7 +67,7 @@
                                             <div class="col-md-4">
                                                 <p>Hora Inicio</p>
                                                 <select name="lunesInicio" id="lunesInicio" class="form-control">
-                                                    <option value="">00:00</option>
+                                                    <option value="0">00:00</option>
                                                     <option value="7">07:00</option>
                                                     <option value="8">08:00</option>
                                                     <option value="9">09:00</option>
@@ -82,7 +82,7 @@
                                                     <option value="18">18:00</option>
                                                 </select>
                                                 <select name="martesInicio" id="martesInicio" class="form-control my-4">
-                                                    <option value="">00:00</option>
+                                                    <option value="0">00:00</option>
                                                     <option value="7">07:00</option>
                                                     <option value="8">08:00</option>
                                                     <option value="9">09:00</option>
@@ -97,7 +97,7 @@
                                                     <option value="18">18:00</option>
                                                 </select>
                                                 <select name="miercolesInicio" id="miercolesInicio" class="form-control my-4">
-                                                    <option value="">00:00</option>
+                                                    <option value="0">00:00</option>
                                                     <option value="7">07:00</option>
                                                     <option value="8">08:00</option>
                                                     <option value="9">09:00</option>
@@ -112,7 +112,7 @@
                                                     <option value="18">18:00</option>
                                                 </select>
                                                 <select name="juevesInicio" id="juevesInicio" class="form-control my-4">
-                                                    <option value="">00:00</option>
+                                                    <option value="0">00:00</option>
                                                     <option value="7">07:00</option>
                                                     <option value="8">08:00</option>
                                                     <option value="9">09:00</option>
@@ -127,7 +127,7 @@
                                                     <option value="18">18:00</option>
                                                 </select>
                                                 <select name="viernesInicio" id="viernesInicio" class="form-control my-4">
-                                                    <option value="">00:00</option>
+                                                    <option value="0">00:00</option>
                                                     <option value="7">07:00</option>
                                                     <option value="8">08:00</option>
                                                     <option value="9">09:00</option>
