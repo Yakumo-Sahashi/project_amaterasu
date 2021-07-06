@@ -155,46 +155,4 @@
         </div>
     </div>
 </div>
-
-<!-- Modal Editar Examenes-->
-<div class="modal fade" id="editarInformacionModal" tabindex="-1" aria-labelledby="verHorariosModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel">
-                    <b>Editar Informacion</b></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="col-md-12">
-                        <label for="">Materia y carrera</label>
-                        <select name="" id="" class="form-control">
-                            <option value="">Materias</option>
-                        </select>
-                        <label for="">Unidad</label>
-                        <select name="" id="" class="form-control">
-                            <option value="">Unidad</option>
-                        </select>
-                        <label for="">Eligue el tipo de archivo</label>
-                        <select name="" id="" class="form-control">
-                            <option value="">Archivo</option>
-                        </select>
-                        <label for="">eligue el archivo</label>
-                        <input type="file" class="form-control">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer  justify-content-center">
-                <button type="button" class="btn btn-blue-card">Añadir</button>
-                <button type="button" class="btn btn-red-card" data-dismiss="modal">Cancelar</button>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="<?=SERVIDOR?>controller/funciones_agregar_examen.js"></script>
