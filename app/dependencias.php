@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="<?=SERVIDOR;?>css/b4/bootstrap.css">
     <link rel="stylesheet" href="<?=SERVIDOR;?>css/main.css">
     <link rel="stylesheet" href="<?=SERVIDOR;?>css/carga.css">
+    <link rel="stylesheet" href="<?=SERVIDOR;?>css/toggleButton.css"">
     <link rel="stylesheet" href="<?=SERVIDOR;?>css/dataTable/dataTables.bootstrap4.min.css">
 
     <script src="<?=SERVIDOR;?>js/font_awesome/all.js"></script>

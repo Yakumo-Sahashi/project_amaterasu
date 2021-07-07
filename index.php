@@ -40,6 +40,9 @@
                     case 'registroAlumnos': 
                         require_once 'view/admin/tablaAlumno.php';
                         break;
+                    case 'materiasActivas':
+                        require_once 'view/admin/materiasActivas.php';
+                        break;
                 //----------------docente-------------------------
                     case 'docente': 
                         require_once 'view/docente/panel.php';
