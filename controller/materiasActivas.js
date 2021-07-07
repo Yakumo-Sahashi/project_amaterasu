@@ -1,15 +1,13 @@
 function usuariosActivos(idMaterias,idSemestre){
-    if($('#estadoMaterias').is(':checked')){
-        $.ajax({
-            type: 'POST',
-            data: 'idMaterias= ' + idMaterias + '&idSemestre=' + idSemestre,
-            url: 'model/materiasActivas.php',
-            success: (r) => {
-                console.log(r);
-                swal(":D","Actualizado con exito", "success");
-            }
-        });
-    }
+    console.log(idMaterias,idSemestre);
+    $.ajax({
+        type: 'POST',
+        data: 'idMaterias= ' + idMaterias + '&idSemestre=' + idSemestre,
+        url: 'model/materiasActivas.php',
+        success: (r) => {
+            
+        }
+    });
 }
 $(document).ready(function(){
     $('#tablaMaterias').DataTable({

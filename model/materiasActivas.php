@@ -15,7 +15,7 @@
             $conexion = Conectar :: conexion();
             $semestre = $this->comprobarSemestre();
             if($idSemestre == $semestre){
-                $semestre -= 1;
+                $semestre --;
             }
             $sql = "UPDATE t_materias SET m_semestre = ? WHERE idMateria = ?";
             $query = $conexion->prepare($sql);
@@ -27,5 +27,5 @@
     }
 
     $materias = new MateriasActivas();
-    echo $materias->actualizarSemestre($_POST['idMaterias'],$_POST['idMaterias']);
+    echo $materias->actualizarSemestre($_POST['idMaterias'],$_POST['idSemestre']);
 ?>
