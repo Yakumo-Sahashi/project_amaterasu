@@ -79,7 +79,6 @@ precargarMaterias();
         for(var i = 0; i < datos_precarga.length; i++){
           option = option + '<option value="'+datos_precarga[i].unidades+datos_precarga[i].nombreMateria+'">'+datos_precarga[i].nombreMateria + ' - ' + datos_precarga[i].carrera+'</option>';
         }
-        option = option + '<option value="'+datos_precarga[i].unidades+datos_precarga[i].nombreMateria+'">'+datos_precarga[i].nombreMateria + ' - ' + datos_precarga[i].carrera+'</option>';
         $('#materia').html(option);
       }
     });

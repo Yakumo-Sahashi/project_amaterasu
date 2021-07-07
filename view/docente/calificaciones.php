@@ -36,7 +36,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div id="accordion">
-                                                <?php $cont = 1; foreach ($conexion->query("SELECT idMateria,nombreMateria,unidades FROM t_horarios th INNER JOIN t_materias tm ON th.id_materia = tm.idMateria INNER JOIN t_docentes td ON th.idDocente = td.idDocentes INNER JOIN t_semestre ts ON tm.m_semestre = ts.idSemestre  WHERE th.idDocente = {$_SESSION['user']['datosDocente']}") as $dt):?>
+                                                <?php $cont = 1; foreach ($conexion->query("SELECT idMateria,nombreMateria,unidades FROM t_horarios th INNER JOIN t_materias tm ON th.id_materia = tm.idMateria INNER JOIN t_docentes td ON th.idDocente = td.idDocentes INNER JOIN t_semestre ts ON tm.m_semestre = ts.idSemestre  WHERE th.idDocente = {$_SESSION['user']['datosDocente']} AND ts.estado = 'activo'") as $dt):?>
                                                 <div class="card">
                                                     <div class="card-header" id="heading<?=$cont?>">
                                                         <h5 class="mb-0">

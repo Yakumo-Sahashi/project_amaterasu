@@ -190,7 +190,7 @@ $(document).ready(() => {
             title: "Advertencia!",
             text: ""+msj,
             icon: "warning"  
-            });
+        });
     }
 
     $('#btnEditar').click(() => {
