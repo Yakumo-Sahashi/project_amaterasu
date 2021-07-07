@@ -26,7 +26,7 @@
                                 <a href="consultaCalificaciones" class="card-body" title="Calificaciones">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/calificaciones.png" alt="">
-                                        <p class="display-4 ml-1">10</p>
+                                        <p class="display-4 ml-1">C</p>
                                     </div>
                                 </a>
                             </div>
@@ -37,7 +37,7 @@
                                 <a href="horario" class="card-body" title="Materias">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/materias.png" alt="">
-                                        <p class="display-4 ml-1">9</p>
+                                        <p class="display-4 ml-1">M</p>
                                     </div>
                                 </a>
                             </div>
@@ -48,7 +48,7 @@
                                 <a href="examenes" class="card-body" title="Exámenes">
                                     <div class="input-group">
                                         <img width="60%" src="img/icon_panel/examen.png" alt="" srcset="">
-                                        <p class="display-4 ml-1">3</p>
+                                        <p class="display-4 ml-1">E</p>
                                     </div>
                                 </a>
                             </div>
@@ -59,7 +59,7 @@
                                 <a href="semestre" class="card-body" title="Semestre">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/semestre.png" alt="">
-                                        <p class="display-4 ml-1">12</p>
+                                        <p class="display-4 ml-1">S</p>
                                     </div>
                                 </a>
                             </div>
@@ -70,7 +70,7 @@
                                 <a href="archivos" class="card-body" title="Archivos totales">
                                     <div class="input-group">
                                         <img width="60%" src="img/icon_panel/archivos.png" alt="">
-                                        <p class="display-4 ml-1">5</p>
+                                        <p class="display-4 ml-1">A</p>
                                     </div>
                                 </a>
                             </div>

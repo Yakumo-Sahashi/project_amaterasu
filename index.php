@@ -34,6 +34,9 @@
                     case 'materias': 
                         require_once 'view/admin/materias.php';
                         break;
+                    case 'horarios': 
+                        require_once 'view/admin/horarios.php';
+                        break;
                     case 'usuariosActivos': 
                         require_once 'view/admin/usuariosActivos.php';
                         break;
