@@ -9,7 +9,7 @@
 
     $carrera = $conexion->real_escape_string(htmlentities($_POST['carrera']));
 
-    $sql = "SELECT idMateria, nombreMateria FROM t_materias WHERE carrera = ?";
+    $sql = "SELECT t_materias.idMateria, t_materias.nombreMateria FROM t_materias INNER JOIN t_semestre WHERE t_materias.carrera = ? AND t_semestre.estado = 'activo' ";
 
 
 

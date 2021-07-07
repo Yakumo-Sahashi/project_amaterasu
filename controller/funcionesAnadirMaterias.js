@@ -1,39 +1,6 @@
 $(document).ready(function () {
     var obj;
-    var aula;
-    var carrera, horaInicio, horaFin;
-    var materia, docente;
-    var lunes = "00:00-00:00";
-    var martes = "00:00-00:00";
-    var miercoles = "00:00-00:00";
-    var jueves = "00:00-00:00";
-    var viernes = "00:00-00:00";
-
-
-    function mostrarTabla() {
-        $('#tablaMaterias').DataTable({
-            language: {
-                url: "http://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-            },
-            ajax: './model/mostrarMaterias.php',
-            columns: [
-                { data: "nombreMateria" },
-                { data: "nombreDocente" },
-                { data: "carrera" },
-                { data: "semestre" },
-                { data: "aula" },
-                {
-                    data: "editar",
-                    render: function (data, type, row) {
-                        return '<span class="btn btn-warning btn-sm text-white borde-button" data-toggle="modal" data-target="#editarMateriaModal"><i class="fas fa-edit"></i></span>'
-                    }
-                }
-            ]
-        });
-
-        return false;
-
-    };
+    var aula, carrera, materia, docente;
 
     function selectCarreraAnadir() {
         $('#selectCarreraAnadir').bind('change', function () {
@@ -302,8 +269,13 @@ $(document).ready(function () {
                         icon: "success"
                     });
                     $('#tablaMaterias').DataTable().ajax.reload();
-                    $('#frmAsignarHorario').trigger("reset");
+                    $('#frmAsignarHorario')[0].reset();
                     $('#selectMateriaAnadir').attr("disabled", "");
+                    $('#lunesFin').val("").attr("disabled", "");
+                    $('#martesFin').val("").attr("disabled", "");
+                    $('#miercolesFin').val("").attr("disabled", "");
+                    $('#juevesFin').val("").attr("disabled", "");
+                    $('#viernesFin').val("").attr("disabled", "");
                     selectHorarios();
                 };
 
@@ -311,21 +283,6 @@ $(document).ready(function () {
         });
 
     };
-
-    function editarMateria() {
-        if ($('#lunes').val() == "" && $('#martes').val() == "" && $('#miercoles').val() == "" && $('#jueves').val() == "" && $('#viernes').val() == "") {
-            swal({
-                title: "Advertencia!",
-                text: "No puedes dejar todos los horarios vacios",
-                icon: "warning"
-            });
-            return false;
-        } else {
-
-        }
-    };
-
-    mostrarTabla();
 
     selectCarreraAnadir();
 
@@ -335,15 +292,9 @@ $(document).ready(function () {
 
     activarSelectHorarios();
 
-    /* validarHorario(); */
 
     $('#btnAnadirMateria').click(() => {
         validarDatos();
-        
-
     });
 
-    $('#btnEditarMateria').click(() => {
-        editarMateria();
-    })
 });
