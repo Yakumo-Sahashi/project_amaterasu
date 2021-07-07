@@ -21,7 +21,7 @@
                             <h2>Listado de materias</h2>
                         </div>
                         <div class="col-md-4 ">
-                            <button class="btn btn-blue btn-block">Ver Horario</button>
+                            <a href="model/horarioAlumno.php" target="_blank" class="btn btn-blue btn-block">Ver Horario</a>
                             <a href="alumno" class="btn btn-blue btn-block"><b>Volver al Panel de Control</b></a>
                         </div>
                         <div class="col-md-12">
