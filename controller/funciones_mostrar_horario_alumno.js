@@ -19,7 +19,7 @@ var tabla = $('#tablaMaterias').DataTable({
             "previous": "Anterior"
         }
     },
-    "ajax":'./model/mostrarTablaHorarios.php',
+    "ajax":'./model/mostrarMateriasAlumno.php',
     "columns": [
         {"data": "nombreDocente"},
         {"data": "apellidoPaternoP"},

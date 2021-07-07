@@ -18,7 +18,7 @@
 
     $zip = new ZipArchive();
 
-    $nombreZip = $semestre."-".$_SESSION['user']['email'];
+    $nombreZip = $semestre."-".$_SESSION['user']['email'].".zip";
     
     $zip->open($nombreZip,ZipArchive::CREATE);
     
