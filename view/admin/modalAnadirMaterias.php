@@ -1,6 +1,6 @@
 <!-- Modal Añadir-->
     <div class="modal fade" id="anadirMateriaModal" tabindex="-1" aria-labelledby="anadirMateriaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="anadirMateriaModalLabel"><b>Asignar Horario</b></h5>
@@ -12,7 +12,7 @@
                     <div class="container-fluid">
                         <form action="" method="post" id="frmAsignarHorario">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <h5><b>Elige la carrera</b></h5>
                                     <select name="" id="selectCarreraAnadir" class="form-control">
                                         <option value="">Selecciona una carrera</option>
@@ -25,15 +25,15 @@
                                         <option value="">Selecciona una materia</option>
                                     </select>
                                     <h5 class="py-3"><b>Elige el semestre</b></h5>
-                                    <select name="" id="selectSemestreAnadir" class="form-control">
+                                    <select name="" id="selectSemestreAnadir" class="form-control" disabled>
                                         <option value="">Selecciona un semestre</option>
                                     </select>
                                     <h5 class="py-3"><b>Elige el docente</b></h5>
-                                    <select name="idDocente" id="selectDocenteAnadir" class="form-control">
+                                    <select name="idDocente" id="selectDocenteAnadir" class="form-control" disabled>
                                         <option value="">Selecciona el docente</option>
                                     </select>
                                     <h5 class="py-3"><b>Elige el aula</b></h5>
-                                    <select name="aula" id="selectAulaAnadir" class="form-control">
+                                    <select name="aula" id="selectAulaAnadir" class="form-control" disabled>
                                         <option value="">Selecciona el aula</option>
                                         <option value="A1">A1</option>
                                         <option value="A2">A2</option>
@@ -53,116 +53,18 @@
                                         <option value="D4">D4</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <h5><b>Horarios</b></h5>
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <p class="pt-5 pb-2">Lunes</p>
-                                                <p class="py-3">Martes</p>
-                                                <p class="pt-2 pb-3">Miercoles</p>
-                                                <p class="py-2">Jueves</p>
-                                                <p class="pt-3">Viernes</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p>Hora Inicio</p>
-                                                <select name="lunesInicio" id="lunesInicio" class="form-control">
-                                                    <option value="0">00:00</option>
-                                                    <option value="7">07:00</option>
-                                                    <option value="8">08:00</option>
-                                                    <option value="9">09:00</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="18">18:00</option>
-                                                </select>
-                                                <select name="martesInicio" id="martesInicio" class="form-control my-4">
-                                                    <option value="0">00:00</option>
-                                                    <option value="7">07:00</option>
-                                                    <option value="8">08:00</option>
-                                                    <option value="9">09:00</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="18">18:00</option>
-                                                </select>
-                                                <select name="miercolesInicio" id="miercolesInicio" class="form-control my-4">
-                                                    <option value="0">00:00</option>
-                                                    <option value="7">07:00</option>
-                                                    <option value="8">08:00</option>
-                                                    <option value="9">09:00</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="18">18:00</option>
-                                                </select>
-                                                <select name="juevesInicio" id="juevesInicio" class="form-control my-4">
-                                                    <option value="0">00:00</option>
-                                                    <option value="7">07:00</option>
-                                                    <option value="8">08:00</option>
-                                                    <option value="9">09:00</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="18">18:00</option>
-                                                </select>
-                                                <select name="viernesInicio" id="viernesInicio" class="form-control my-4">
-                                                    <option value="0">00:00</option>
-                                                    <option value="7">07:00</option>
-                                                    <option value="8">08:00</option>
-                                                    <option value="9">09:00</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="18">18:00</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p>Hora Fin</p>
-                                                <select name="lunesFin" id="lunesFin" class="form-control" disabled>
-                                                    
-                                                </select>
-                                                <select name="martesFin" id="martesFin" class="form-control my-4" disabled>
-                                                
-                                                </select>
-                                                <select name="miercolesFin" id="miercolesFin" class="form-control my-4" disabled>
-                                                    
-                                                </select>
-                                                <select name="juevesFin" id="juevesFin" class="form-control my-4" disabled>
-                                                    
-                                                </select>
-                                                <select name="viernesFin" id="viernesFin" class="form-control my-4" disabled>
-                                                    
-                                                </select>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <label for="lunes">Lunes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="lunes" id="lunes">
+                                    <label for="martes">Martes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="martes" id="martes">
+                                    <label for="miercoles">Miercoles</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="miercoles" id="miercoles">
+                                    <label for="jueves">Jueves</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="jueves" id="jueves">
+                                    <label for="viernes">Viernes</label>
+                                    <input type="text" placeholder="--:--" class="form-control form-control-sm" name="viernes" id="viernes">
                                 </div>
                             </div>
                         </form>
@@ -175,5 +77,3 @@
             </div>
         </div>
     </div>
-
-    <script src="<?= SERVIDOR ?>controller/funcionesAnadirMaterias.js"></script>

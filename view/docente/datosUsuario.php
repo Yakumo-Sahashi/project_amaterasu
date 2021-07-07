@@ -6,11 +6,11 @@
                 <a href="#" class="text-secondary" data-toggle="modal" data-target="#editarImagenModal"><i class="fas fa-edit"></i>Editar imagen</a>
                 <h3>Docente</h3>
                 <hr>
-                <p class=""><b>Nombre: </b></p>
-                <p class=""><b>Apellidos: </b></p>
-                <p class=""><b>Carrera: </b></p>
-                <p class=""><b>Email: </b></p>
-                <p class=""><b>RFC: </b></p>
+                <p class=""><b>Nombre: <?=$_SESSION['dataUser']['nombreDocente']?></b></p>
+                <p class=""><b>Apellidos: <?=$_SESSION['dataUser']['apellidoPaternoP']?> <?=$_SESSION['dataUser']['apellidoMaternoP']?></b></p>
+                <!-- <p class=""><b>Carrera: </b></p> -->
+                <p class=""><b>Email: <?=$_SESSION['user']['email']?></b></>
+                <p class=""><b>RFC: <?=$_SESSION['dataUser']['rfc']?></b></p>
                 <hr>
                 <a href="admin" class="btn btn-light btn-block">Panel Admin</a>
             </div>

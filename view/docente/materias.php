@@ -16,51 +16,27 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group ">
-                                <span class="input-group-prepend">
-                                    <div class="input-group-text bg-transparent border border-dark border-right-0">
-                                        <i class="fas fa-search"></i>
-                                    </div>
-                                </span>
-                                <input class="form-control py-2 border border-dark border-left-0 border" type="search" />
-                            </div>
+                    <div class="row card-materias mt-3 justify-content-center">
+                        <div class="col-md-7 align-self-center text-center">
+                            <h2>Listado de materias</h2>                            
                         </div>
-                        <div class="col-md-3 mt-3">
-                            <span class="btn btn-blue-card btn-block"><b>Buscar</b></span>
+                        <div class="col-md-4 ">
+                            <button class="btn btn-blue btn-block">Ver Horario</button>  
+                            <a href="docente" class="btn btn-blue btn-block"><b>Volver al Panel de Control</b></a>                          
                         </div>
                         <div class="col-md-12">
                             <div class="px-4 py-4 text-center">
-                            <table class="table table-body border border-secondary table-hover table-responsive-xl">
+                            <table class="table table-body border border-secondary table-hover table-responsive-xl" id="tablaMaterias">
                                 <thead class="table-head">
                                     <tr>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Aula</th>
-                                        <th scope="col">Carrera</th>
-                                        <th scope="col">Semestre</th>
-                                        <th scope="col">Ver Horarios</th>
+                                        <th>Materia</th>
+                                        <th>Aula</th>
+                                        <th>Carrera</th>
+                                        <th>Semestre</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Quimica</td>
-                                        <td>C4</td>
-                                        <td>industrial</td>
-                                        <td>5</td>
-                                        <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sis. Web</td>
-                                        <td>D1</td>
-                                        <td>Sistemas</td>
-                                        <td>6</td>
-                                        <td><span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#verHorariosModal"><i class="fas fa-edit"></i></span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
                             <div class="text-center pb-4">
-                                <a href="docente" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
+                                
                             </div>
                         </div>
                     </div>             
@@ -96,3 +72,5 @@
         </div>
     </div>
 </div>
+
+<script src="<?=SERVIDOR?>controller/funciones_cargar_materias_docente.js"></script>

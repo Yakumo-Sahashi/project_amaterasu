@@ -6,7 +6,7 @@
         if($_SESSION['user']['rol'] == "2"){
             $direccion = "docente";
         }else{
-            $direccion = "alumno";
+            echo '<script> window.location="alumno" </script>';
         }
     }
 ?>
@@ -45,4 +45,4 @@
         </div>
     </div>
 </div>
-<script src="<?=SERVIDOR?>controller/grafica.js"></script>
+<script src="<?=SERVIDOR?>controller/funciones_grafica.js"></script>
