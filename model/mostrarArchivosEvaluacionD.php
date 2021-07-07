@@ -14,7 +14,7 @@
   $carpetaRol = $_SESSION['user']['rol'] == 2 ? "docente" : "alumno";
   
 
-  $idUss =  $_SESSION['user']['rol'] == 3 ?  $_SESSION['user']['datosAlumno'] : "";
+  $idUss =  $_SESSION['user']['rol'] == 3 ?  $_POST['idDocentes'] :  $_SESSION['user']['datosDocente'] ;
 
   $tipoArchivo = $_POST['tipo'];
 
@@ -29,7 +29,7 @@
 <div class="row justify-content-around">
   <?php 
     for($i = 1; $i <= $unidad; $i++ ){
-      $path = "files/docente/".$_SESSION['user']['datosDocente']."/".$semestre."/".$materia."/".$tipoArchivo."/unidad_".$i;
+      $path = "files/docente/".$idUss."/".$semestre."/".$materia."/".$tipoArchivo."/unidad_".$i;
       if(file_exists("../".$path)){//revisa si el archivo existe
         $directorio = opendir("../".$path);//abre el directorio
         while ($archivo = readdir($directorio)){ //Devuelve el nombre de la entrada al directorio
