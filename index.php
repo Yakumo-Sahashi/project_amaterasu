@@ -34,14 +34,14 @@
                     case 'materias': 
                         require_once 'view/admin/materias.php';
                         break;
+                    case 'horarios': 
+                        require_once 'view/admin/horarios.php';
+                        break;
                     case 'usuariosActivos': 
                         require_once 'view/admin/usuariosActivos.php';
                         break;
                     case 'registroAlumnos': 
                         require_once 'view/admin/tablaAlumno.php';
-                        break;
-                    case 'materiasActivas':
-                        require_once 'view/admin/materiasActivas.php';
                         break;
                 //----------------docente-------------------------
                     case 'docente': 
@@ -75,6 +75,9 @@
                 //----------------general-------------------------
                     case 'login': 
                         require_once 'view/login/login.php';
+                        break; 
+                    case 'recuperar': 
+                        require_once 'view/login/recuperacion.php';
                         break; 
                     case 'semestre': 
                         require_once 'view/calendario.php';

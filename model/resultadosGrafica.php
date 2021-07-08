@@ -15,7 +15,7 @@
     $totales = array();
     foreach ($conexion->query("SELECT nombreMateria FROM t_horarios th INNER JOIN t_materias tm ON th.id_materia = tm.idMateria INNER JOIN t_semestre ts ON tm.m_semestre = ts.idSemestre INNER JOIN t_docentes td ON th.idDocente = td.idDocentes WHERE idDocente = '$id' AND ts.semestre = '$semestre'" ) as $data){
         for( $i = 0 ; $i < count($tipoArchivo) ; $i++ ){    
-            $path = "files/".$carpetaRol."/".$_SESSION['user']['email']."/".$semestre."/".$data['nombreMateria']."/".$tipoArchivo[$i];
+            $path = "files/".$carpetaRol."/".$_SESSION['user']['datosDocente']."/".$semestre."/".$data['nombreMateria']."/".$tipoArchivo[$i];
 
             if(file_exists("../".$path)){//revisa si el archivo existe
                 $directorio = opendir("../".$path);//abre el directorio

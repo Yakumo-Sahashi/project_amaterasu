@@ -30,7 +30,7 @@
                                 <a href="docentes" class="card-body" title="Docentes">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/docente.png" alt="">
-                                        <p class="display-4 ml-1">10</p>
+                                        <p class="display-4 ml-1">D</p>
                                     </div>
                                 </a>
                             </div>
@@ -41,7 +41,7 @@
                                 <a href="materias" class="card-body" title="Materias">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/materias.png" alt="">
-                                        <p class="display-4 ml-1">9</p>
+                                        <p class="display-4 ml-1">M</p>
                                     </div>
                                 </a>
                             </div>
@@ -52,29 +52,40 @@
                                 <a href="usuariosActivos" class="card-body" title="Usuarios activos">
                                     <div class="input-group">
                                         <img width="60%" src="img/icon_panel/usuarios.png" alt="" srcset="">
-                                        <p class="display-4 ml-1">3</p>
+                                        <p class="display-4 ml-1">U</p>
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div>     
                         <div class="col-md-4">
                             <div class="card text-center shadow card-panel mb-3">
                                 <a class="mt-3 text-black" href="semestre" title="Semestre"><b>Semestre</b></a>
                                 <a href="semestre" class="card-body" title="Semestre">
                                     <div class="input-group">
                                         <img class="" width="60%" src="img/icon_panel/semestre.png" alt="">
-                                        <p class="display-4 ml-1">12</p>
+                                        <p class="display-4 ml-1">S</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card text-center shadow card-panel mb-3">
+                                <a class="mt-3 text-black" href="horarios" title="Horarios"><b>Horarios</b></a>
+                                <a href="horarios" class="card-body" title="Horarios">
+                                    <div class="input-group">
+                                        <img width="60%" src="img/icon_panel/horario.png" alt="">
+                                        <p class="display-4 ml-1">H</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>     
+                        <div class="col-md-4">
+                            <div class="card text-center shadow card-panel mb-3">
                                 <a class="mt-3 text-black" href="registroAlumnos" title="Alumnos"><b>Alumnos</b></a>
                                 <a href="registroAlumnos" class="card-body" title="Alumnos">
                                     <div class="input-group">
                                         <img width="60%" src="img/icon_panel/alumno.png" alt="">
-                                        <p class="display-4 ml-1">5</p>
+                                        <p class="display-4 ml-1">A</p>
                                     </div>
                                 </a>
                             </div>

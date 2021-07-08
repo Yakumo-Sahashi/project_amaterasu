@@ -14,21 +14,21 @@ $(document).ready(() => {
                 if (r != "2") {
                     var url = r.split(",");
                     var descargar = "http://localhost/project_amaterasu/" + url[1];
-                    setTimeout(() => {
+                    
                         loader.ending();
                         window.open(descargar,'_blank');
-
-                        $.ajax({
-                            type: 'POST',
-                            data: 'archivo_dir=' + "../" + url[1],
-                            url: 'model/eliminarArchivo.php',
-                            success: (r) => {
-                                if (r == "1") {
-                                    //alert("eliminado"+r);
+                        setTimeout(() => {
+                            $.ajax({
+                                type: 'POST',
+                                data: 'archivo_dir=' + "../" + url[1],
+                                url: 'model/eliminarArchivo.php',
+                                success: (r) => {
+                                    if (r == "1") {
+                                        //alert("eliminado"+r);
+                                    }
                                 }
-                            }
-                        });
-                    }, 2000);
+                            });
+                        }, 3000);
                 } else {
                     loader.ending();
                     swal('Upss', "No se ha generado el archivo ZIP" + r, 'error');

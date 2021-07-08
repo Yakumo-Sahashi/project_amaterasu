@@ -43,7 +43,7 @@ $(document).ready(() => {
         $.ajax({
             type: 'post',
             data: 'semestre=' + semestre,
-            url: 'model/selectMaterias.php',
+            url: 'model/selectMateriasArchivos.php',
             success: (r) => {
                 $('#materia').html(r);
                 loader.ending();

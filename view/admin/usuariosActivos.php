@@ -16,51 +16,29 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-6 mt-3 px-4">
-                            <div class="input-group ">
-                                <span class="input-group-prepend">
-                                    <div class="input-group-text bg-transparent border border-dark border-right-0">
-                                        <i class="fas fa-search"></i>
-                                    </div>
-                                </span>
-                                <input class="form-control py-2 border border-dark border-left-0 border" type="search" />
-                            </div>
+                    <div class="row card-materias mt-3 justify-content-center">
+                        <div class="col-md-7 text-center align-self-center">
+                                <h2>Listado de usuarios</h2>
                         </div>
-                        <div class="col-md-3 mt-3">
-                            <span class="btn btn-blue-card btn-block"><b>Buscar</b></span>
+                        <div class="col-md-4">
+                            <a href="admin" class="btn btn-blue btn-block">Volver al Panel de Control</a>
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
                         </div>
                         <div class="col-md-12">
                             <div class="px-4 py-4 text-center">
-                            <table class="table table-body border border-secondary table-hover table-responsive-xl">
+                            <table class="table table-body border border-secondary table-hover table-responsive-xl" id="tablaUsuarios">
                                 <thead class="table-head">
                                     <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellidos</th>
-                                        <th scope="col">Área</th>
-                                        <th scope="col">RFC</th>
+                                        <th scope="col">IdUsuario</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Rol</th>
                                         <th scope="col">Estado</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Camilo</td>
-                                        <td>Séptimo</td>
-                                        <td>Cálculo</td>
-                                        <td>CCP6908</td>
-                                        <td><span class="btn btn-success borde-button mr-2"></span>Online</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alberto</td>
-                                        <td>García</td>
-                                        <td>Gestión</td>
-                                        <td>DFJ6705</td>
-                                        <td><span class="btn btn-danger borde-button mr-2"></span>Offline</td>
-                                    </tr>
-                                </tbody>
                             </table>
                             <div class="text-center pb-4">
-                                <a href="admin" class="btn btn-blue-card text-white"><b>Volver al Panel de Control</b></a>
                             </div>
                         </div>
                     </div>             
@@ -69,3 +47,5 @@
         </div>
     </div>
 </div>
+
+<script src="<?=SERVIDOR?>controller/funcionesUsuariosActivos.js"></script>

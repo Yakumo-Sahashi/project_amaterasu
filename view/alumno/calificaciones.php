@@ -1,4 +1,7 @@
 <?php
+    require_once 'model/conector.php';
+    $conectar = new Conectar();
+	$conexion =  $conectar->conexion();
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
 	}elseif($_SESSION['user']['rol'] != "3"){
@@ -16,47 +19,45 @@
         <div class="col-md-9">
             <div class="card shadow card-login">
                 <div class="card-body">
-                    <div class="row card-materias mx-1 my-1">
-                        <div class="col-md-12 mt-3 px-4 text-center">
-                                <h3>Asignacion de calificaciones</h3>
+                    <div class="row card-materias justify-content-center mt-3">
+                        <div class="col-md-7 text-center align-self-center">
+                            <h3>Consulta de calificaciones</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="alumno" class="btn btn-blue btn-block"><b>Volver al Panel de Control</b></a>
                         </div>
                         <div class="col-md-12">
-                            <div class="py-4 text-center">
-                            <table class="table table-body border border-secondary table-hover table-responsive-xl table-md">
-                                <thead class="table-head">
-                                    <tr>
-                                        <th scope="col">Materia</th>
-                                        <th scope="col">Carrera</th>
-                                        <th scope="col">Semestre</th>
-                                        <th scope="col">Unidad</th>
-                                        <th scope="col">Examen</th>
-                                        <th scope="col" colspan="2">Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Estructura de datos</td>
-                                        <td>Programacion</td>
-                                        <td>5</td>
-                                        <td>1</td>
-                                        <td>ExamenU1.docx</td>
-                                        <td>
-                                            <span class="btn btn-primary btn-sm borde-button"  data-toggle="modal" data-target="#visualizarArchivoModal">
-                                            <i class="fas fa-eye"></i>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="btn btn-warning btn-sm text-white borde-button"  data-toggle="modal" data-target="#editarInformacionModal">
-                                            <i class="fas fa-download"></i>
-                                            </span>
-                                                
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="text-center pb-4">
-                                <a href="alumno" class="btn btn-blue-card"><b>Volver al Panel de Control</b></a>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card card-archivo">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="accordion">
+                                            <?php $cont = 1; foreach ($conexion->query("SELECT idMateria,nombreMateria,unidades,td.idDocentes FROM t_horarioalumno tah INNER JOIN t_alumnos ta ON tah.idAlumno = ta.idAlumno INNER JOIN t_horarios th ON tah.idHorario = th.idHorario INNER JOIN t_materias tm ON th.id_materia = tm.idMateria INNER JOIN t_semestre ts ON tm.m_semestre = ts.idSemestre INNER JOIN t_docentes td ON th.idDocente = td.idDocentes WHERE tah.idAlumno = {$_SESSION['user']['datosAlumno']} AND ts.estado = 'activo'") as $dt):?>
+                                                <div class="card">
+                                                    <div class="card-header" id="heading<?=$cont?>">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<?=$cont?>" aria-expanded="true" aria-controls="collapse<?=$cont?>" onclick="mostrarDatos('evaluacion','<?=$dt['unidades']?><?=$dt['nombreMateria']?>',<?=$cont?>,'<?=$dt['idDocentes']?>')">
+                                                                <?=$dt['nombreMateria']?>
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapse<?=$cont?>" class="collapse" arial-labelledby="heading<?=$cont?>" data-parent="#accordion">
+                                                        <div class="card-body" id="archivos<?=$cont?>">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php $cont++; endforeach?>
+                                                <?php $conexion->close();?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>             
                 </div>
@@ -64,25 +65,20 @@
         </div>
     </div>
 </div>
-<!--Visualizar Modal-->
-<div class="modal fade" id="visualizarArchivoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-      <h5 class="modal-title w-100 text-center border-bottom border-dark pb-2" id="editarMateriaModalLabel"><b>Vista Previa</b></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-      </div>
-      <div class="modal-body">
-            <div id="archivoObtenido">
-            
-            
-            </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+<script>
+    var idTemp = "1";
+    function mostrarDatos(tipo,materia,id,idDocentes) {
+        console.log(materia);
+        //loader.opening();
+        idTemp = ""+id;
+        $.ajax({
+            type: 'post',
+            data: 'tipo=' + tipo + '&materia=' + materia + '&idDocentes='+idDocentes,
+            url: "model/mostrarArchivosEvaluacionD.php",
+            success: (r) => {
+            $('#archivos'+id).html(r);
+                //loader.ending();
+            }
+        });
+    }
+</script>
