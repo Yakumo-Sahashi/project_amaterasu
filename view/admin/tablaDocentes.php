@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="row card-materias justify-content-center">
                         <div class="col-md-8 text-center mt-3 align-self-center">
-                            <h1>Listado de alumnos</h1>
+                            <h1>Listado de docentes</h1>
                         </div>
                         <div class="col-md-4 mt-3 text-center align-self-center">
                             <span class="btn btn-blue btn-block" data-toggle="modal"

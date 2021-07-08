@@ -96,7 +96,7 @@ class PDF extends FPDF{
 	$pdf->Cell(15,10,$fecha,0,1);
 	$pdf->SetX(16);
 	$pdf->SetFont('Arial','B',11);
-	$pdf->Cell(21,6,'ALUMNO : ',0,0);
+	$pdf->Cell(21,6,'DOCENTE : ',0,0);
 	$pdf->SetFont('Arial','',11);
 	$pdf->Cell(110,6,$nombre,0,1);
 
