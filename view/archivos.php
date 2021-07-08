@@ -1,4 +1,8 @@
 <?php
+    require_once 'model/conector.php';
+    $conectar = new Conectar();
+	$conexion =  $conectar->conexion();
+
     $direccion ="";
 	if (!isset($_SESSION['user'])) {
 		echo '<script> window.location="login" </script>';
@@ -32,32 +36,33 @@
                                 <div class="col-md-12">
                                     <div class="card border-0">
                                         <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <select class="form-control mb-1" name="materia" id="materia">
-                                                        <option value="">Elegir materia</option>
-                                                        <option value="">materia1</option>
-                                                        <option value="">materia2</option>
-                                                        <option value="">materia3</option>
-                                                        <option value="">materia4</option>
-                                                        <option value="">materia5</option>
-                                                    </select>
-                                                </div>
+                                            <div class="row justify-content-around">
                                                 <div class="col-md-3">
                                                     <select class="form-control mb-1" name="semestre" id="semestre">
                                                         <option value="">Semestre</option>
-                                                        <option value="">Ene - Jun 2021</option>
-                                                        <option value="">Ago - dic 2021</option>
-                                                        <option value="">Ene - Jun 2020</option>
+                                                        <?php foreach ($conexion->query('SELECT semestre,estado from t_semestre ORDER BY idSemestre DESC') as $dt):?>
+                                                        <option value="<?=$dt['semestre']?>"><?=$dt['semestre']?></option>
+                                                        <?php endforeach?>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-3">                                    
-                                                    <button class="btn btn-panel btn-block mb-1" data-toggle="modal" data-target="#subirArchivos">Subir archivo <i class="fas fa-upload"></i></button>
+                                                <div class="col-md-3">
+                                                    <select class="form-control mb-1" name="materia" id="materia">
+                                                        
+                                                    </select>
+                                                </div>
+                                                <?php if($_SESSION['user']['rol'] == 3):?>
+                                                <div class="col-md-4 align-self-center">
+                                                    <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
+                                                </div>
+                                                <?php else:?>
+                                                <div class="col-md-3">                            
+                                                    <button class="btn btn-panel btn-block mb-1" data-toggle="modal" id="btnModal" data-target="#subirArchivos" disabled >Subir archivo <i class="fas fa-upload"></i></button>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <button class="btn btn-panel btn-block mb-1" type="button">Descargar todo <i class="fas fa-download"></i></button>
+                                                    <button class="btn btn-panel btn-block mb-1" type="button" id="btnZip" disabled>Descargar <i class="fas fa-download"></i></button>
                                                 </div>
                                                 </div>
+                                                <?php endif?>
                                             </div>
                                         </div>
                                     </div>
@@ -94,58 +99,27 @@
                                                 <div class="tab-content py-3">
                                                     <div class="tab-pane fade show active" id="word" role="tabpanel" aria-labelledby="sec1-tab">
                                                         <div class="row">
-                                                            <?php for($i=1; $i<11; $i++):?>
-                                                            <div class="col-2 mb-2">                                                                
-                                                                <div class="contenerdor-btn">    
-                                                                    <img src="img/icon_archivos/word.jpg" class="img-fluid rounded border border-dark rounded ">                                                                      
-                                                                    <div class="boton-emergente ml-1">
-                                                                        <button class="btn btn-descarga btn-sm" title="Descargar"><i class="fas fa-arrow-down"></i></button>                                                                                                     
-                                                                        <button class="btn btn-eliminar btn-sm" title="Eliminar"><i class="far fa-trash-alt"></i></button>           
-                                                                    </div>
-                                                                </div>
-                                                                <p class="text-center text-muted">Tarea <?=$i?>.docx</p>  
-                                                            </div>
-                                                            <?php endfor?>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosWord"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="excel" role="tabpanel" aria-labelledby="sec2-tab">
                                                         <div class="row">
-                                                            <?php for($i=1; $i<6; $i++):?>
-                                                            <div class="col-2 mb-2 ">
-                                                                <img src="img/icon_archivos/excel.jpg" class="img-fluid border border-dark rounded" alt="">  
-                                                                <p class="text-center text-muted">Lista <?=$i?>.xlsx</p>                                         
-                                                            </div>
-                                                            <?php endfor?>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosExcel"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pdf" role="tabpanel" aria-labelledby="sec3-tab">
                                                         <div class="row">
-                                                            <?php for($i=1; $i<11; $i++):?>
-                                                            <div class="col-2 mb-2 ">
-                                                                <img src="img/icon_archivos/pdf.jpg" class="img-fluid border border-dark rounded" alt="">  
-                                                                <p class="text-center text-muted">Tarea <?=$i?>.pdf</p>                                         
-                                                            </div>
-                                                            <?php endfor?>
+                                                            <div class="col-md-12" style="width:auto; height:210px; overflow: scroll;" id="archivosPdf"></div>
                                                         </div>                                                
                                                     </div>
                                                     <div class="tab-pane fade" id="jpg" role="tabpanel" aria-labelledby="sec4-tab">
                                                         <div class="row">
-                                                            <?php for($i=1; $i<11; $i++):?>
-                                                            <div class="col-2 mb-2 ">
-                                                                <i class="far fa-image fa-5x text-primary"></i>  
-                                                                <p class="text-center text-muted">Imagen <?=$i?>.jpg</p>                                         
-                                                            </div>
-                                                            <?php endfor?>
+                                                            <div class="col-md-12 "style="width:auto; height:210px; overflow: scroll;" id="archivosImg"></div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="mp3" role="tabpanel" aria-labelledby="sec5-tab">
                                                         <div class="row">
-                                                            <?php for($i=1; $i<11; $i++):?>
-                                                            <div class="col-2 mb-2 ">
-                                                                <i class="far fa-file-audio fa-5x text-primary"></i>  
-                                                                <p class="text-muted">audio <?=$i?>.mp3</p>                                         
-                                                            </div>
-                                                            <?php endfor?>
+                                                            <div class="col-md-12" id="archivosMp3"></div>                                                            
                                                         </div>                                                
                                                     </div>
                                                 </div>
@@ -154,10 +128,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-around">
+                            <div class="row justify-content-center">
+                            <?php if($_SESSION['user']['rol'] == 2):?>
                                 <div class="col-md-4 mt-4 mb-4">
                                     <a class="btn btn-blue btn-block" href="<?=$direccion?>">Volver al panel</a>
                                 </div>
+                                <div class="col-md-4 mt-4 mb-4">
+                                    <a class="btn btn-blue btn-block" href="grafica">Grafica de archivos</a>
+                                </div>
+                            <?php endif?>
                             </div>
                         </div>
                     </div>
@@ -180,7 +159,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form id="subirArchivo">
+                <form action="model/cargarArchivos.php" method="post" enctype="multipart/form-data" id="subirArchivo">
 					<div class="row justify-content-around">
                         <div class="col-md-11">
                             <p class="">
@@ -190,17 +169,18 @@
                             </p>
                         </div>
 						<div class="col-md-11">
+                            <input type="text" value="" id="slMateria" name="slMateria" hidden>
 							<label for="tipo"><b>Elige el tipo de archivo</b></label>
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-folder"></i></span>
 								</div>
 								<select name="tipo" id="tipo" class="custom-select">				
-									<option value="docx">documento de Word (.docx, .doc)</option>
-									<option value="pdf">Documento PDF (.pdf)</option>
+									<option value="docx">Documento de Word (.docx)</option>
                                     <option value="xlsx">Hoja de calculo Excel (.xlsx)</option>
+                                    <option value="pdf">Documento PDF (.pdf)</option>
                                     <option value="jpg">Imagen (.jpg)</option>
-                                    <option value="mp3">Audio formato mp3 (.pm3)</option>
+                                    <option value="mp3">Audio (.pm3)</option>
 								</select>
 			        		</div>
 						</div>
@@ -210,16 +190,21 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-folder-open"></i></span>
 								</div>
-								<input type="file" name="archivo" id="archivo" class="form-control">
+								<input type="file" class="form-control" name="archivo[]" id="archivo" multiple>	
 			        		</div>
 						</div>
+                        <div class="col-md-12">                        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
 					</div>	        
 				</form>
 			</div>
-			<div class="modal-footer">
-                <button type="button" class="btn btn-panel" id="btnSubir">Subir</button>
-		        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-		    </div>
 		</div>
 	</div>					
 </div>
+<script src="<?=SERVIDOR?>controller/funciones_subir_archivos.js" type="module"></script>
+<script src="<?=SERVIDOR?>controller/funciones_eliminar_archivo.js"></script>
+<script src="<?=SERVIDOR?>controller/funciones_crear_zip.js" type="module"></script>

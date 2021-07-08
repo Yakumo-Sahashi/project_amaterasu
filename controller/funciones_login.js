@@ -14,7 +14,7 @@ $(document).ready(() => {
     }else if($('#email').val() == ""){
       swal({
         title: "Advertencia!",
-        text: "Debes ingresar un nombre de email!",
+        text: "Debes ingresar un email!",
         icon: "warning"  
       });
       return false;
